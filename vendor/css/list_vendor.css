@@ -1,0 +1,740 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #F5F5F5;
+}
+
+.navbar {
+    z-index: 3;
+    height: 80px;
+}
+
+.bg-transparent {
+    transition: all ease-in 0.3s;
+}
+
+.nav-color {
+    background-color: #F9C8C8;
+    transition: all ease-in-out 0.3s;
+}
+
+/* Navbar */
+/* bold tulisan logo pd navbar */
+.navbar-brand {
+    font-weight: 700;
+}
+
+.nav-link {
+    font-size: 16px;
+}
+
+.nav-link.active {
+    font-weight: 700;
+}
+
+.btn_register {
+    width: 110px;
+    height: 40px;
+    background-color: #FFF;
+    color: #FF7171;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 30px;
+    margin-right: 10px;
+}
+
+.btn_register:hover {
+    background-color: #0F1F48;
+    color: #FFF;
+    font-weight: 700;
+    transition: 0.4s ease;
+}
+
+.btn_login {
+    width: 110px;
+    height: 40px;
+    background-color: #0F1F48;
+    color: #FFF;
+    border: none;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 30px;
+    transition: 0.5s;
+}
+
+.btn_login:hover {
+    background-color: #FFF;
+    color: #FF7171;
+}
+
+
+/* Hero Section */
+
+#hero {
+    /* background: linear-gradient(107.1deg, #FF7171 2.48%, rgba(255, 113, 113, 0.55) 48.14%, rgba(255, 113, 113, 0.8) 94.86%); */
+    /* background-image: url('img/katering_bg.jpg'); */
+    height: 654px;
+    width: 100%;
+}
+
+.hero-tagline h1 {
+    position: absolute;
+    width: 560px;
+    height: 96px;
+    left: 100px;
+    top: 225px;
+    font-weight: 600;
+    font-size: 44px;
+    line-height: 48px;
+    color: #000;
+}
+
+.hero-tagline p {
+    position: absolute;
+    height: 60px;
+    width: 511px;
+    top: 350px;
+    left: 100px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #000;
+    line-height: 30px;
+}
+
+.btn_cari_sekarang {
+    box-sizing: border-box;
+    position: absolute;
+    height: 50px;
+    width: 220px;
+    top: 410px;
+    left: 100px;
+    background: #FF7171;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    color: #FFF;
+    font-weight: 700;
+}
+
+.btn_cari_sekarang:hover {
+    background: #0F1F48;
+    border: none;
+}
+
+/* Search Section */
+#search {
+    padding: 0px 0 80px;
+    position: relative;
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 48px;
+    color: #000000;
+}
+
+.rectangle {
+    position: relative;
+    height: 180px;
+    width: 100%;
+    top: 50px;
+    background-color: #F5F5F5;
+    box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.10);
+    border-radius: 20px;
+    /* margin-bottom: 50px; */
+}
+/* field cari */
+.form-control {
+    /* position: absolute; */
+    width: 420px;
+    height: 50px;
+    background: #F0F0F0;
+    border-radius: 12px;
+    /* margin: 30px; */
+    margin-left: 60px;
+    margin-top: 30px;
+}
+
+.form-select {
+    color: #FFF;
+}
+
+.form-select {
+    box-sizing: border-box;
+    color: #000;
+    width: 180px;
+    height: 50px;
+    /* border: 2px solid #FF7171; */
+    border-radius: 12px;
+    /* background-color: transparent; */
+    background-color: #F0F0F0;
+
+    /* margin-left: 20px; */
+    /* margin-left: 10px; */
+    margin-top: 30px;
+}
+
+.form-select .option {
+    background: #FFF;
+    color: #000000;
+    border: none;
+}
+
+.filter_adat .form-select {
+    box-sizing: border-box;
+    color: #000;
+    width: 110px;
+    height: 50px;
+    /* border: 2px solid #FF7171; */
+    border-radius: 12px;
+    /* background-color: transparent; */
+    background-color: #F0F0F0;
+
+    /* margin-left: 20px; */
+    /* margin-left: 10px; */
+    margin-top: 30px;
+}
+
+
+.btn_dropdown {
+    box-sizing: border-box;
+    color: #FFF;
+    width: 140px;
+    height: 50px;
+    border: 2px solid #FF7171;
+    border-radius: 12px;
+    background-color: transparent;
+    margin-left: 20px;
+    /* margin-left: 10px; */
+    margin-top: 30px;
+}
+
+.btn_search {
+    width: 120px;
+    background-color: #FF7171;
+    height: 50px;
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    cursor: pointer;
+    color: #FFF;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-left: 60px;
+}
+
+
+/* KATERING SECTION */
+.card {
+    height: 440px;
+    width: 22rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+    background: #F4F9E9;
+    box-shadow: 10px 13px 50px rgba(0, 0, 0, 0.20);
+    margin-top: 30px;
+}
+
+.card img {
+    border-radius: 30px 30px 0 0;
+    height: 265px;
+}
+
+#photo {
+    height: 265px;
+    width: 100%;
+	object-fit: cover;
+}
+
+.card:hover {
+    background: #FFE1E1;
+    box-shadow: 10px 13px 50px rgba(254, 156, 156, 0.25);
+    transition: all ease-in-out 0.5s;
+}
+
+.card-body h4 {
+    color: #000000;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    /* margin-bottom: 3px; */
+}
+
+.card-body p {
+    color: #000000;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.card-body span {
+    line-height: 24px;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.card-body i {
+    color: #D0D0D0;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    /* padding-left: 280px; */
+    /* margin-right: 20px; */
+    font-size: 24px;
+}
+
+.card-body i:hover {
+    color: #fd4646;
+    transition: all ease-in 0.2s;
+}
+
+/* Vendor Favorit */
+.card-body .love {
+    color: #fd4646;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    font-size: 24px;
+}
+
+
+
+  /* FOOTER SECTION */
+
+  footer {
+    /* position: relative; */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #0F1F48;
+    height: auto;
+    width: 100vw;
+    margin-top: 100px;
+    padding-top: 50px;
+    color: #FFF;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer-content h3 {
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: capitalize;
+    line-height: 3rem;
+}
+
+.footer-content p {
+    max-width: 600px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14px;
+    text-align: center;
+    font-weight: 300;
+}
+
+.fast_link {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  cursor: pointer;
+}
+
+.fast_link li {
+  margin: 0 30px;
+  font-weight: 500;
+  font-size: 14px;
+  text-decoration: underline;
+}
+
+.fast_link li:hover {
+  color: #FF7171;
+  transition: 0.4s ease;
+}
+
+.sosmed {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 2rem 3rem 0;
+}
+
+.sosmed li {
+  margin: 0 15px;
+}
+
+.sosmed a {
+  text-decoration: none;
+  color: #FFF;
+}
+.sosmed a img {
+    font-size: 1.1rem;
+    /* transition: color .4s ease; */
+}
+
+/* .sosmed img:hover {
+    color: #FF7171;
+} */
+
+.footer-bottom {
+    /* background-color: #000; */
+    width: 100vw;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+}
+
+.footer-bottom span {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+
+/* Responsive */
+
+@media screen and (max-width : 972px) {
+    .hero-tagline h1 {
+        top: 200px;
+        width: 420px;
+        font-size: 34px;
+    }
+
+    .img-hero {
+        width: 140%;
+        height: auto;
+        top: 0px;
+    }
+
+    .hero-tagline p {
+        top: 310px;
+        width: 300px;
+        font-size: 16px;
+    }
+
+    .btn_cari_sekarang {
+        font-size: 14px;
+        height: 50px;
+        width: 160px;
+        top: 400px;
+    }
+    /* Cari */
+    .rectangle {
+        height: 160px;
+        width: 100%;
+        top: 100px;
+        margin-bottom: 50px;
+        border-radius: 20px;
+    }
+    .form-control {
+        width: 300px;
+        height: 40px;
+        border-radius: 12px;
+        /* margin: 30px; */
+        margin-left: 25px;
+        margin-top: 25px;
+        font-size: 12px;
+    }
+    .form-select {
+        width: 150px;
+        height: 40px;
+        border-radius: 12px;
+        font-size: 12px;
+        margin-top: 25px;
+    }
+
+    .filter_adat .form-select {
+        width: 100px;
+        height: 40px;
+        border-radius: 12px;
+        font-size: 12px;
+        margin-top: 25px;
+        margin-left: 25px;
+    }
+
+    .btn_search {
+        /* width: 60px; */
+        height: 40px;
+        font-size: 12px;
+        margin-top: 25px;
+        margin-left: 5px;
+    }
+
+    /* Katering */
+    .card {
+        height: 355px;
+        width: 14rem;
+        margin-top: 30px;
+    }
+
+    .card img {
+        border-radius: 30px 30px 0 0;
+        height: 100%;
+	    width: 100%;
+	    object-fit: cover;
+    }
+
+    .card-body h4 {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    .card-body p {
+        font-weight: 400;
+        font-size: 14px;
+    }
+
+    .card-body span {
+        line-height: 20px;
+        font-weight: 500;
+        font-size: 14px;
+    }
+}
+
+/* TAB / HP Landscape  */
+@media screen and (max-width : 576px) {
+    .hero-tagline h1 {
+        top: 200px;
+        width: 360px;
+        font-size: 28px;
+    }
+
+    .img-hero {
+        width: 180%;
+        height: auto;
+        /* transform: translateX(25%); */
+        /* zoom: 50%; */
+        top: 0px;
+    }
+
+    .hero-tagline p {
+        top: 310px;
+        width: 300px;
+        font-size: 16px;
+    }
+
+    .btn_cari_sekarang {
+        font-size: 14px;
+        height: 50px;
+        width: 160px;
+        top: 400px;
+    }
+    /* Cari */
+    .rectangle {
+        height: 160px;
+        width: 100%;
+        top: -50px;
+        border-radius: 20px;
+        margin-bottom: -80px;
+    }
+    .form-control {
+        width: 160px;
+        height: 40px;
+        border-radius: 12px;
+        /* margin: 30px; */
+        margin-left: 15px;
+        margin-top: 25px;
+        font-size: 12px;
+    }
+    .form-select {
+        width: 140px;
+        height: 40px;
+        border-radius: 12px;
+        background-color: #F0F0F0;
+        font-size: 12px;
+        margin-top: 25px;
+    }
+
+    .filter_adat .form-select {
+        width: 100px;
+        height: 40px;
+        border-radius: 12px;
+        font-size: 12px;
+        margin-top: 25px;
+        margin-left: 15px;
+    }
+
+    .btn_search {
+        margin-left: 0px;
+    }
+
+    /* Katering */
+    .card {
+        height: 300px;
+        width: 10.5rem;
+        margin-top: 30px;
+    }
+
+    .card-body h4 {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .card-body p {
+        font-weight: 400;
+        font-size: 12px;
+    }
+
+    .card-body span {
+        line-height: 20px;
+        font-weight: 500;
+        font-size: 12px;
+    }
+    .card-body i {
+        float: right;
+        margin-right: 20px;
+        font-size: 18px;
+    }
+
+      /* footer */
+    .footer-content p {
+        max-width: 400px;
+        /* font-size: 14px; */
+    }
+}
+
+/* HP */
+@media screen and (max-width : 414px) {
+    .hero-tagline h1 {
+        top: 150px;
+        width: 250px;
+        font-size: 28px;
+        left: 40px;
+    }
+
+    .img-hero {
+        width: 250%;
+        /* max-width: 800px; */
+        /* zoom: 10%; */
+        height: auto;
+        top: 0px;
+        /* right: 0px; */
+        transform: translateX(25%);
+        /* zoom: normal; */
+        /* max-height: 10s0%; */
+        /* display: none; */
+    }
+
+    .hero-tagline p {
+        top: 280px;
+        width: 250px;
+        font-size: 16px;
+        left: 40px;
+    }
+
+    .btn_cari_sekarang {
+        font-size: 13px;
+        height: 40px;
+        width: 140px;
+        top: 380px;
+        left: 40px;
+    }
+
+    /* Cari */
+    .rectangle {
+        height: 220px;
+        width: 100%;
+        top: -50px;
+        border-radius: 20px;
+    }
+    .form-control {
+        width: 120px;
+        height: 40px;
+        border-radius: 12px;
+        /* margin: 30px; */
+        margin-left: 15px;
+        margin-top: 25px;
+        font-size: 12px;
+    }
+    .form-select {
+        width: 140px;
+        height: 40px;
+        border-radius: 12px;
+        background-color: #F0F0F0;
+        font-size: 12px;
+        margin-top: 25px;
+        margin-left: 15px;
+    }
+
+    .filter_adat .form-select {
+        width: 90px;
+        height: 40px;
+        border-radius: 12px;
+        font-size: 12px;
+    }
+
+    .btn_search {
+        margin-top: 25px;
+        margin-left: 15px;
+    }
+
+    /* Katering */
+    .card {
+        height: 300px;
+        width: 8rem;
+        margin-top: 30px;
+        border-radius: 12px;
+    }
+    .card img {
+        border-radius: 12px 12px 0 0;
+    }
+
+    .card-body h4 {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .card-body p {
+        font-weight: 400;
+        font-size: 12px;
+    }
+
+    .card-body span {
+        line-height: 20px;
+        font-weight: 500;
+        font-size: 12px;
+    }
+    .card-body i {
+        float: right;
+        margin-right: 3px;
+        font-size: 18px;
+    }
+
+      /* footer */
+    .footer-content p {
+        max-width: 300px;
+    }
+    .fast_link li {
+        margin: 0 15px;
+        font-size: 14px;
+        text-decoration: underline;
+    }
+    .footer-bottom p {
+        font-size: 12px;
+        word-spacing: 2px;
+        text-transform: capitalize;
+    }
+}
+

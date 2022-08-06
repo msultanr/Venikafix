@@ -1,0 +1,177 @@
+
+:root {
+    --primary-color : #FF7171;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #F5F5F5;
+    line-height: 1.5;
+}
+
+.navbar {
+    z-index: 3;
+	height: 80px;
+    /* background-color: #F9C8C8; */
+}
+
+.bg-transparent {
+    transition: all ease-in 0.3s;
+}
+
+.nav-color {
+    background-color: #F9C8C8;
+    transition: all ease-in-out 0.3s;
+}
+
+/* Navbar */
+/* bold tulisan logo pd navbar */
+.navbar-brand {
+    font-weight: 700;
+}
+
+.nav-link {
+    font-size: 16px;
+}
+
+.nav-link.active {
+    font-weight: 700;
+}
+
+/* user profile drop down */
+ul {
+	padding-left: 0;
+	list-style-type: none;
+	margin-bottom: 0;
+	padding-top: 12px;
+}
+
+/* tulisan dalam card */
+a {
+	font-size: 13px;
+	color: #000;
+	-webkit-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+	text-decoration: none;
+}
+
+span {
+    color: #000;
+}
+
+/* .header-navbar .navbar-wrapper .navbar-container .nav-left,
+.header-navbar .navbar-wrapper .navbar-container .nav-right {
+	float: left;
+	margin-bottom: 0;
+} */
+
+.header-navbar .navbar-wrapper .navbar-container .nav-right li>a {
+	font-size: 16px;
+	display: block;
+}
+
+.nav-right {
+	float: right;
+}
+
+/* foto */
+.header-navbar .navbar-wrapper .navbar-container .nav-right .user-profile img {
+	margin-right: 10px;
+	width: 40px;
+    height: 40px;
+}
+
+.img-radius {
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.header-navbar .navbar-wrapper .navbar-container .nav-right .user-profile i {
+	/* font-size: 10px; */
+	margin-left: 10px;
+	color: #000;
+}
+
+/* card */
+.header-navbar .navbar-wrapper .navbar-container .header-notification .show-notification,
+.header-navbar .navbar-wrapper .navbar-container .header-notification .profile-notification {
+	/* background: #448aff; */
+	-webkit-box-shadow: 0 0 35px 0 rgba(0, 0, 0, 0.15);
+	box-shadow: 0 0 35px 0 rgba(0, 0, 0, 0.15);
+	border-radius: 5px;
+	opacity: 1;
+	position: absolute;
+	right: 0;
+	visibility: visible;
+	width: 24rem;
+	display: none;
+	padding: 15px 0;
+	-webkit-transform: translateY(20px);
+	transform: translateY(20px);
+	background-color: #F5F5F5;
+}
+
+
+.header-navbar .navbar-wrapper .navbar-container .header-notification .show-notification li,
+.header-navbar .navbar-wrapper .navbar-container .header-notification .profile-notification li {
+	line-height: initial;
+	padding: 1em 20px;
+	width: 100%;
+	-webkit-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+
+.show-notification li:hover,
+.profile-notification li:hover {
+	background-color: #ececec;
+}
+
+
+.header-navbar .navbar-wrapper .navbar-container .header-notification .show-notification li:first-child,
+.header-navbar .navbar-wrapper .navbar-container .header-notification .profile-notification li:first-child {
+	padding: 10px 20px;
+}
+
+/* ukuran card */
+.header-navbar .navbar-wrapper .navbar-container .header-notification .profile-notification {
+	width: 12em;
+}
+/* ukuran teks */
+.header-navbar .navbar-wrapper .navbar-container .header-notification .profile-notification a {
+	font-size: 15px;
+	padding-left: 0;
+}
+
+.header-navbar .navbar-wrapper .navbar-container .header-notification .profile-notification i {
+	font-size: 15px;
+	margin-left: 0;
+	margin-right: 8px;
+	color: #909090;
+}
+
+/*======= Main-header css end ======*/
+
+.pcoded .pcoded-header {
+	position: relative;
+	display: block;
+	background-color: transparent;
+}
+
+/* lokasi */
+.pcoded[theme-layout="vertical"] .pcoded-header {
+	/* width: 100%;
+	-webkit-box-shadow: 0 1px 2.94px 0.06px rgba(4, 26, 55, 0.16);
+	box-shadow: 0 1px 2.94px 0.06px rgba(4, 26, 55, 0.16);
+	z-index: 1029; */
+}
+
+/* warna bg */
+body[themebg-pattern="theme1"] {
+	/* background-color: #448aff; */
+}

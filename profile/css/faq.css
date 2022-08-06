@@ -1,0 +1,676 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #F5F5F5;
+    justify-content: center;
+}
+
+.navbar {
+    z-index: 3;
+    height: 80px;
+}
+
+.bg-transparent {
+    transition: all ease-in 0.3s;
+}
+
+.nav-color {
+    background-color: #F9C8C8;
+    transition: all ease-in-out 0.3s;
+}
+
+/* Navbar */
+/* bold tulisan logo pd navbar */
+.navbar-brand {
+    font-weight: 700;
+}
+
+.nav-link {
+    font-size: 16px;
+}
+
+.nav-link.active {
+    font-weight: 700;
+}
+
+.btn_register {
+    width: 110px;
+    height: 40px;
+    background-color: #FFF;
+    color: #FF7171;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 30px;
+    margin-right: 10px;
+}
+
+.btn_register:hover {
+    background-color: #0F1F48;
+    color: #FFF;
+    font-weight: 700;
+    transition: 0.4s ease;
+}
+
+.btn_login {
+    width: 110px;
+    height: 40px;
+    background-color: #0F1F48;
+    color: #FFF;
+    border: none;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 30px;
+    transition: 0.5s;
+}
+
+.btn_login:hover {
+    background-color: #FFF;
+    color: #FF7171;
+}
+
+
+/* Hero Section */
+
+#hero {
+    /* background: linear-gradient(107.1deg, #FF7171 2.48%, rgba(255, 113, 113, 0.55) 48.14%, rgba(255, 113, 113, 0.8) 94.86%); */
+    /* background-image: url('img/katering_bg.jpg'); */
+    height: 654px;
+    width: 100%;
+}
+
+.hero-tagline h1 {
+    position: absolute;
+    width: 560px;
+    height: 96px;
+    left: 100px;
+    top: 225px;
+    font-weight: 600;
+    font-size: 44px;
+    line-height: 48px;
+    color: #fff;
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 48px;
+    color: #000000;
+}
+
+
+/* Kontak Section */
+
+#kategori {
+    padding: 50px 0;
+}
+
+#kategori h2 {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 48px;
+    color: #000000;
+    margin-bottom: 50px;
+}
+
+#kategori .kontak_venika {
+    display: flex;
+    /* position: sticky; */
+	/* left: 70%; */
+    /* margin-left: 500px; */
+	/* top: 50%; */
+	/* transform: translate(20%, -50%); */
+    /* margin-top: 100px; */
+    justify-content: center;
+}
+
+.card-kategori {
+    width: 180px;
+    height: 180px;
+    background: #F4F9E9;
+    box-shadow: 0px 5px 30px rgba(238, 165, 166, 0.25);
+    border-radius: 30px;
+    padding: 50px;
+    cursor: pointer;
+    margin: 30px;
+
+    transition: all .1s ease-in;
+}
+
+.kategori i, h4 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 20px;
+    text-align: center;
+    transition: all .1s ease-in;
+}
+
+/* Hover Kategori */
+
+#kategori {
+    padding: 50px 0;
+}
+
+.card-kategori:hover {
+    background: #FFE1E1;
+    box-shadow: 0px 5px 30px rgba(238, 165, 166, 0.25);
+
+    transition: all .1s ease-in;
+}
+
+.card-kategori i {
+    text-align: center;
+    /* line-height: 55px; */
+    color: #FF7171;
+    font-size: 40px;
+    transition: 0.5s;
+    margin-top: auto;
+
+    transition: all .1s ease-in;
+}
+
+
+#faq {
+    /* background: #e0e2dd; */
+    /* background: #FDEFEF; */
+    width: 100%;
+    left: 0;
+    right: 0;
+    height: auto;
+    width: 100vw;
+    color: #FFF;
+    /* padding-bottom: 50px; */
+}
+
+#faq .text-center {
+    margin-top: 100px;
+}
+
+/* #tentang_kami h2 {
+    margin-top: 100px;
+    color: #000000;
+} */
+
+.right {
+    display: grid;
+    grid-template-columns: 42% auto;
+    padding: 4em 1em;
+    color: #000;
+}
+
+.right img {
+    width: 100%;
+}
+
+.accordion {
+    margin-left: 30px;
+}
+
+.accordion-button {
+    color: #2C2C2C;
+    font-weight: 600;
+    /* color: #FF7171; */
+    /* background: #FF7171;
+    border-radius: 100px; */
+}
+
+.features {
+    margin-left: 80px;
+    margin-top: 80px;
+}
+
+.features h3 {
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #2C2C2C;
+    text-align: left;
+}
+
+.features p {
+    font-weight: 400;
+    font-size: 16px;
+    color: #5F5F5F;
+    text-align: justify;
+}
+
+.features a {
+    color: var(--primary-color);
+    border: none;
+    font-size: 16px;
+    font-weight: 700;
+    transition: 0.5s;
+    justify-content: center;
+    text-align: center;
+}
+
+.features a:hover {
+    /* color: #4070F4; */
+    border: none;
+    font-size: 16px;
+    font-weight: 700;
+    transition: 0.5s ease;
+}
+/* Kategori */
+.card-kategori {
+    width: 150px;
+    height: 150px;
+    padding: 40px;
+    margin: 30px;
+}
+.card-kategori h4 {
+    justify-content: center;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+  /* FOOTER SECTION */
+
+  footer {
+      /* position: relative; */
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #0F1F48;
+      height: auto;
+      width: 100vw;
+      padding-top: 50px;
+      color: #FFF;
+      margin-top: 50px;
+  }
+
+  .footer-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .footer-content h3 {
+      font-size: 24px;
+      font-weight: 700;
+      text-transform: capitalize;
+      line-height: 3rem;
+  }
+
+  .footer-content p {
+      max-width: 600px;
+      margin: 10px auto;
+      line-height: 28px;
+      font-size: 14px;
+      text-align: center;
+      font-weight: 300;
+  }
+
+.fast_link {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    cursor: pointer;
+}
+
+.fast_link li {
+    margin: 0 30px;
+    font-weight: 500;
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+.fast_link li:hover {
+    color: #FF7171;
+    transition: 0.4s ease;
+}
+
+.sosmed {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 2rem 3rem 0;
+}
+
+.sosmed li {
+    margin: 0 15px;
+}
+
+.sosmed a {
+    text-decoration: none;
+    color: #FFF;
+}
+  .sosmed a img {
+      font-size: 1.1rem;
+      /* transition: color .4s ease; */
+  }
+
+  /* .sosmed img:hover {
+      color: #FF7171;
+  } */
+
+  .footer-bottom {
+      /* background-color: #000; */
+      width: 100vw;
+      padding: 20px 0;
+      text-align: center;
+  }
+
+  .footer-bottom p {
+      font-size: 14px;
+      word-spacing: 2px;
+      text-transform: capitalize;
+  }
+
+  .footer-bottom span {
+    color: #fff;
+    font-size: 16px;    
+    font-weight: 700;
+  }
+
+
+ 
+
+
+  /* Responsive */
+
+@media screen and (max-width : 972px) {
+    .hero-tagline h1 {
+        top: 200px;
+        width: 100px;
+        font-size: 42px;
+    }
+
+    .img-hero {
+        width: 140%;
+        height: auto;
+        top: 0px;
+    }
+
+    .hero-tagline p {
+        top: 310px;
+        width: 300px;
+        font-size: 16px;
+    }
+
+    #hero {
+        margin-bottom: 50px;
+    }
+
+    .features {
+        margin-left: 25px;
+        margin-top: auto;
+    }
+    .features h3 {
+        font-weight: 700;
+        font-size: 20px;
+        margin-bottom: 20px;
+        color: #2C2C2C;
+        text-align: left;
+    }
+    .features p {
+        font-weight: 400;
+        font-size: 14px;
+    }
+    
+    .features a {
+        border: none;
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+    /* Katering */
+    .card {
+        height: 355px;
+        width: 14rem;
+        margin-top: 30px;
+    }
+    
+    .card img {
+        border-radius: 30px 30px 0 0;
+        height: 100%;
+	    width: 100%;
+	    object-fit: cover;
+    }
+    
+    .card-body h4 {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 24px;
+    }
+    
+    .card-body p {
+        font-weight: 400;
+        font-size: 14px;
+    }
+    
+    .card-body span {
+        line-height: 20px;
+        font-weight: 500;
+        font-size: 14px;
+    }
+}
+
+/* TAB / HP Landscape  */
+@media screen and (max-width : 576px) {
+    .hero-tagline h1 {
+        top: 120px;
+        width: 100px;
+        font-size: 30px;
+    }
+
+    .img-hero {
+        width: 120%;
+        height: auto;
+        /* transform: translateX(25%); */
+        /* zoom: 50%; */
+        top: 0px;
+        object-fit: cover;
+    }
+    #hero {
+        margin-bottom: -300px;
+    }
+
+    .hero-tagline p {
+        top: 310px;
+        width: 300px;
+        font-size: 16px;
+    }
+
+    /* Tentang Kami */
+    #faq {
+        margin-top: -150px;
+    }
+    #faq h2,
+    #kategori h2 {
+        font-size: 24px;
+    }
+    .right img {
+        width: 80%;
+    }
+
+    .features {
+        margin-left: -30px;
+        margin-top: auto;
+    }
+    .features h3 {
+        font-weight: 700;
+        font-size: 20px;
+        margin-bottom: 20px;
+        color: #2C2C2C;
+        text-align: left;
+    }
+    .features p {
+        font-weight: 400;
+        font-size: 14px;
+    }
+    
+    .features a {
+        border: none;
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+/* Kontak */
+    /* Kategori */
+    .card-kategori {
+        width: 120px;
+        height: 120px;
+        padding: 30px;
+        margin: 15px;
+    }
+    .card-kategori h4 {
+        font-size: 14px;
+        font-weight: 500;
+        margin-top: 10px;
+        /* margin-left: -10px; */
+    }
+    .card-kategori .wa,
+    .card-kategori .ig {
+        font-size: 14px;
+        font-weight: 500;
+        margin-top: 10px;
+        margin-left: -5px;
+    }
+    .card-kategori i {
+        font-size: 28px;
+    }
+    
+      /* footer */
+    .footer-content p {
+        max-width: 400px;
+        /* font-size: 14px; */
+    }
+}
+
+/* HP */
+@media screen and (max-width : 414px) {
+    .hero-tagline h1 {
+        top: 120px;
+        width: 100px;
+        font-size: 24px;
+        left: 40px;
+    }
+
+    .img-hero {
+        width: 140%;
+        /* max-width: 800px; */
+        /* zoom: 10%; */
+        height: auto;
+        top: 0px;
+        /* right: 0px; */
+        object-fit: cover;
+        /* transform: translateX(25%); */
+        /* zoom: normal; */
+        /* max-height: 10s0%; */
+        /* display: none; */
+    }
+
+    #hero {
+        margin-bottom: -400px;
+    }
+
+    .hero-tagline p {
+        top: 280px;
+        width: 250px;
+        font-size: 16px;
+        left: 40px;
+    }
+
+    /* Tentang Kami */
+    #faq {
+        margin-top: -150px;
+        margin-bottom: -40px;
+    }
+    #faq h2,
+    #kategori h2 {
+        font-size: 24px;
+    }
+    .right img {
+        width: 80%;
+    }
+    .features {
+        margin-left: -20px;
+        margin-top: auto;
+    }
+    .features h3 {
+        font-weight: 700;
+        font-size: 20px;
+        margin-bottom: 20px;
+        color: #2C2C2C;
+        text-align: left;
+    }
+    .features p {
+        font-weight: 400;
+        font-size: 14px;
+    }
+    
+    .features a {
+        border: none;
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+
+    /* Kontak */
+    /* Kategori */
+    .card-kategori {
+        width: 100px;
+        height: 100px;
+        padding: 30px;
+        margin: 10px;
+    }
+    .card-kategori h4 {
+        font-size: 12px;
+        font-weight: 500;
+        margin-top: 10px;
+        /* margin-left: -10px; */
+    }
+    .card-kategori .wa,
+    .card-kategori .ig {
+        font-size: 12px;
+        font-weight: 500;
+        margin-top: 10px;
+        margin-left: -10px;
+    }
+    .card-kategori i {
+        font-size: 20px;
+    }
+
+      /* footer */
+    .footer-content p {
+        max-width: 300px;
+    }
+    .fast_link li {
+        margin: 0 15px;
+        font-size: 14px;
+        text-decoration: underline;
+    }
+    .footer-bottom p {
+        font-size: 12px;
+        word-spacing: 2px;
+        text-transform: capitalize;
+    }
+}
+
+
+
+
+
+  

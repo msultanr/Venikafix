@@ -1,0 +1,384 @@
+
+@media screen and (max-width : 972px) {
+    .hero-tagline h1 {
+        top: 200px;
+        width: 450px;
+        font-size: 28px;
+    }
+
+    .img-hero {
+        width: 40%;
+        height: auto;
+        top: 280px;
+    }
+
+    .hero-tagline p {
+        top: 310px;
+        width: 300px;
+        font-size: 16px;
+    }
+
+    .btn_cari_sekarang {
+        font-size: 14px;
+        height: 50px;
+        width: 160px;
+        top: 400px;
+    }
+    /* Cari */
+    .rectangle {
+        height: 160px;
+        width: 100%;
+        top: 50px;
+        border-radius: 20px;
+    }
+    .form-control {
+        width: 300px;
+        height: 40px;
+        border-radius: 12px;
+        /* margin: 30px; */
+        margin-left: 25px;
+        margin-top: 25px;
+        font-size: 12px;
+    }
+    .form-select {
+        width: 150px;
+        height: 40px;
+        border-radius: 12px;
+        font-size: 12px;
+        margin-top: 25px;
+    }
+
+    .filter_adat .form-select {
+        width: 100px;
+        height: 40px;
+        border-radius: 12px;
+        font-size: 12px;
+        margin-top: 25px;
+        margin-left: 25px;
+    }
+
+    .btn_search {
+        /* width: 60px; */
+        height: 40px;
+        font-size: 12px;
+        margin-top: 25px;
+        margin-left: 5px;
+    }
+
+    /* Kategori */
+    .card-kategori {
+        width: 160px;
+        height: 150px;
+        padding: 40px;
+        margin: 25px;
+    }
+    .kategori img, h4 {
+        font-size: 16px;
+        font-weight: 500;
+        margin-top: 20px;
+    }
+    /* Hover Kategori */
+    .card-kategori:hover {
+        width: 160px;
+        height: 150px;
+        padding: 40px;
+        margin: 25px;
+    }
+    .card-kategori i {
+        font-size: 24px;
+    }
+
+    /* Tips Pernikahan */
+    .features {
+        margin-left: 40px;
+        margin-top: auto;
+    }
+    /* Testimoni */
+    .slide-container{
+        max-width: 1120px;
+        width: 100%;
+        padding: 40px 0;
+      }
+      .slide-content{
+          margin: 0 60px 40px;
+          overflow: hidden;
+          border-radius: 25px;
+        }
+      .card{
+        margin-top: 50px;
+        border-radius: 25px;
+        background-color: #F5F5F5;
+      }
+}
+
+/* TAB / HP Landscape  */
+@media screen and (max-width : 576px) {
+    .hero-tagline h1 {
+        top: 150px;
+        width: 350px;
+        font-size: 28px;
+    }
+    #hero {
+        height: 654px;
+    }
+    .img-hero {
+        width: 40%;
+        height: auto;
+        top: 400px;
+        /* display: none; */
+    }
+    .hero-tagline p {
+        width: 280px;
+        font-size: 16px;
+    }
+    .btn_cari_sekarang {
+        font-size: 14px;
+        height: 50px;
+        width: 160px;
+    }
+    
+    /* Cari */
+    .rectangle {
+        height: 160px;
+        width: 100%;
+        top: 50px;
+        border-radius: 20px;
+    }
+    .form-control {
+        width: 160px;
+        height: 40px;
+        border-radius: 12px;
+        /* margin: 30px; */
+        margin-left: 15px;
+        margin-top: 25px;
+        font-size: 12px;
+    }
+    .form-select {
+        width: 140px;
+        height: 40px;
+        border-radius: 12px;
+        background-color: #F0F0F0;
+        font-size: 12px;
+        margin-top: 25px;
+    }
+
+    .filter_adat .form-select {
+        width: 100px;
+        height: 40px;
+        border-radius: 12px;
+        font-size: 12px;
+        margin-top: 25px;
+        margin-left: 15px;
+    }
+
+    .btn_search {
+        margin-left: 0px;
+    }
+
+    /* Kategori */
+    .card-kategori {
+        width: 160px;
+        height: 150px;
+        padding: 40px;
+        margin: 25px;
+    }
+    .kategori img, h4 {
+        font-size: 16px;
+        font-weight: 500;
+        margin-top: 20px;
+    }
+    /* Hover Kategori */
+    .card-kategori:hover {
+        width: 160px;
+        height: 150px;
+        padding: 40px;
+        margin: 25px;
+    }
+    .card-kategori i {
+        font-size: 24px;
+    }
+
+    /* Tips Pernikahan */
+    .features {
+        margin-left: 40px;
+        margin-top: auto;
+    }
+    /* Testimoni */
+    .slide-container{
+        max-width: 1120px;
+        width: 100%;
+        padding: 40px 0;
+      }
+      .slide-content{
+          margin: 0 60px 40px;
+          overflow: hidden;
+          border-radius: 25px;
+        }
+      .card{
+        margin-top: 50px;
+        border-radius: 25px;
+        background-color: #F5F5F5;
+      }
+
+      /* footer */
+      .footer-content p {
+        max-width: 400px;
+    }
+}
+
+/* HP */
+@media screen and (max-width : 414px) {
+    .hero-tagline h1 {
+        top: 150px;
+        width: 250px;
+        font-size: 20px;
+        left: 40px;
+    }
+
+    .img-hero {
+        /* width: 40%;
+        height: auto;
+        top: 60px; */
+        display: none;
+    }
+
+    .hero-tagline p {
+        top: 310px;
+        width: 250px;
+        font-size: 16px;
+        left: 40px;
+    }
+
+    .btn_cari_sekarang {
+        font-size: 13px;
+        height: 40px;
+        width: 140px;
+        top: 420px;
+        left: 40px;
+    }
+
+    h2 {
+        font-weight: 700;
+        font-size: 26px;
+        line-height: 48px;
+    }
+
+    /* Cari */
+    .rectangle {
+        height: 220px;
+        width: 100%;
+        top: 50px;
+        border-radius: 20px;
+    }
+    .form-control {
+        width: 120px;
+        height: 40px;
+        border-radius: 12px;
+        /* margin: 30px; */
+        margin-left: 15px;
+        margin-top: 25px;
+        font-size: 12px;
+    }
+    .form-select {
+        width: 140px;
+        height: 40px;
+        border-radius: 12px;
+        background-color: #F0F0F0;
+        font-size: 12px;
+        margin-top: 25px;
+        margin-left: 15px;
+    }
+
+    .filter_adat .form-select {
+        width: 90px;
+        height: 40px;
+        border-radius: 12px;
+        font-size: 12px;
+        /* margin-top: 25px;
+        margin-left: 15px; */
+    }
+
+    .btn_search {
+        margin-top: 25px;
+        margin-left: 15px;
+    }
+
+    /* Kategori */
+    .card-kategori {
+        width: 120px;
+        height: 110px;
+        padding: 30px;
+        margin: 15px;
+    }
+    .kategori i, h4 {
+        font-size: 12px;
+        font-weight: 500;
+        margin-top: 10px;
+    }
+    /* Hover Kategori */
+    .card-kategori:hover {
+        width: 120px;
+        height: 110px;
+        padding: 30px;
+        margin: 15px;
+    }
+    .card-kategori i {
+        font-size: 18px;
+    }
+
+    /* Tips Pernikahan */
+    .features {
+        margin-left: 20px;
+        margin-top: auto;
+    }
+    .features h3 {
+        font-weight: 700;
+        font-size: 20px;
+        margin-bottom: 20px;
+        color: #2C2C2C;
+        text-align: left;
+    }
+    .features p {
+        font-weight: 400;
+        font-size: 14px;
+    }
+    
+    .features a {
+        border: none;
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+    /* Testimoni */
+    .slide-container{
+        max-width: 1120px;
+        width: 100%;
+        padding: 40px 0;
+      }
+      .slide-content{
+          margin: 0 60px 40px;
+          overflow: hidden;
+          border-radius: 25px;
+        }
+      .card{
+        margin-top: 50px;
+        border-radius: 25px;
+        background-color: #F5F5F5;
+      }
+
+      /* footer */
+      .footer-content p {
+        max-width: 300px;
+    }
+    .fast_link li {
+        margin: 0 15px;
+        font-size: 14px;
+        text-decoration: underline;
+    }
+    .footer-bottom p {
+        font-size: 12px;
+        word-spacing: 2px;
+        text-transform: capitalize;
+    }
+}
+
