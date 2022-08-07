@@ -11,7 +11,10 @@
     <script src="https://kit.fontawesome.com/3709d60cb3.js" crossorigin="anonymous"></script>
     <title>Venika</title>
     <link rel="stylesheet" href="css/style.css">
-    
+
+      <!-- ICON LOGO WEB -->
+     <link rel="icon" href="img/icon_venika.png" type="image/x-icon">
+
     <!--===== Boxicons CSS =====-->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 </head>
@@ -20,24 +23,24 @@
         <div class="forms-container">
             <div class="signin-signup">
                 <form action="login/code_login_vendor.php" method="POST" class="sign-in-form">
-                    
+
                     <h2 class="title">Vendor Login</h2>
-                    
+
                     <div class="input-field">
                         <i class="fas fa-user"></i>
-                        <input type="text" 
-                        name="username" 
+                        <input type="text"
+                        name="username"
                         placeholder="Username">
                     </div>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
-                        <input type="password" 
-                        name="password" 
+                        <input type="password"
+                        name="password"
                         placeholder="Password">
                     </div>
 
                     <p class="lupa_pass">Lupa Password ?</p>
-                    
+
                     <input type="submit" name="login" value="login" class="btn solid">
                 </form>
 
@@ -51,14 +54,14 @@
                         <i class="fas fa-user"></i>
                         <input type="text" name="reg_user" placeholder="Username">
                     </div>
-                    
+
                     <!-- <div class="item form-group select-menu">
-                       
+
                         <div class="col-md-6 col-sm-6 sel input-field">
                             <i class="fas fa-list"></i>
                             <select name="reg_layanan" class=" select-btn">
                                 <i class="fas fa-list"></i>
-                               
+
                                 <option value="">Pilih Jenis Layanan</option>
                                 <option value="Dekorasi">Dekorasi</option>
                                 <option value="Foto & Video">Foto & Video</option>
@@ -75,7 +78,7 @@
                     </div> -->
 
                     <!-- <script src="js/script.js"></script> -->
-                    
+
                     <!-- <div class="input-field">
                         <i class="fa-solid fa-location-dot"></i>
                         <input type="text" name="reg_kecamatan" placeholder="Kecamatan">
@@ -106,7 +109,7 @@
                      <button class="btn transparent" id="sign-up-btn">Register</button>
 
                      <p>
-                         Login sebagai User ? 
+                         Login sebagai User ?
                          <a href="login.php" class="daftar_vendor"> Login User</a>
                     </p>
                     </div>
@@ -124,6 +127,6 @@
             </div>
         </div>
         <script src="js/app.js"></script>
-        
+
     </body>
 </html>

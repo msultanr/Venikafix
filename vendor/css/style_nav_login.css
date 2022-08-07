@@ -26,14 +26,19 @@ body {
 }
 
 .nav-color {
-    background-color: #F9C8C8;
+    background-color: #ffe8e8;
     transition: all ease-in-out 0.3s;
 }
 
 /* Navbar */
 /* bold tulisan logo pd navbar */
 .navbar-brand {
+    font-size: 24px;
     font-weight: 700;
+}
+
+.navbar-brand img {
+    margin-right: 20px;
 }
 
 .nav-link {
@@ -92,6 +97,13 @@ span {
 	border-radius: 50%;
 	object-fit: cover;
 	background: #ececec;
+	border: none;
+}
+.profile-pic-div{
+	border-radius: 50%;
+	object-fit: cover;
+	background: #ececec;
+	border: none;
 }
 /* .i-radius {
 	border-radius: 50%;

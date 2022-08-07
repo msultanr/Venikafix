@@ -24,7 +24,7 @@ $id = $_SESSION['id'];
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
 
   <!-- Style CSS -->
-  <link rel="stylesheet" href="css/style_landing_page.css">
+  <link rel="stylesheet" href="css/landpage.css">
   <link rel="stylesheet" href="css/style_nav_login.css">
 
   <!-- Style Responsive -->
@@ -35,6 +35,9 @@ $id = $_SESSION['id'];
 
   <!-- Style Swiper CSS-->
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+  <!-- ICON LOGO WEB -->
+  <link rel="icon" href="img/icon_venika.png" type="image/x-icon">
 
   <!-- Font Awesome -->
   <!-- <script
@@ -50,8 +53,8 @@ if (isset($_SESSION['username'])){
   <!-- Navbar Login -->
   <nav class="navbar navbar-expand-lg bg-transparent navbar-light position-fixed w-100">
     <div class="container">
-      <a class="navbar-brand" href="#">
-        <img src="profile/img/venikasvgfix2.svg" alt="" width="30" height="24"
+      <a class="navbar-brand" href="index.php" style="color: #FF7171;">
+        <img src="profile/img/venikasvgfix2.svg" alt="" width="30" height="30"
           class="d-inline-block align-text-top" me-3>Venika</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -60,7 +63,7 @@ if (isset($_SESSION['username'])){
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mx-auto">
           <li class="nav-item mx-3">
-            <a class="nav-link active" aria-current="page" href="#">Beranda</a>
+            <a class="nav-link active" aria-current="page" href="index.php">Beranda</a>
           </li>
           <li class="nav-item mx-3">
             <a class="nav-link" href="#kategori">Vendor</a>
@@ -167,8 +170,8 @@ if (isset($_SESSION['username'])){
   <nav class="navbar navbar-expand-lg navbar-light bg-transparent position-fixed w-100">
     <div class="container">
 
-      <a class="navbar-brand" href="#">
-        <img src="../profile/img/venikasvgfix2.svg" alt="" width="30" height="24"
+      <a class="navbar-brand" href="index.php" style="color: #FF7171;">
+        <img src="profile/img/venikasvgfix2.svg" alt="" width="30" height="30"
           class="d-inline-block align-text-top" me-3>Venika</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -214,7 +217,7 @@ if (isset($_SESSION['username'])){
           <button class="btn_cari_sekarang">Cari sekarang...</button>
         </div>
       </div>
-      <img src="img/hero.png" alt="" class="position-absolute end-0 bottom-0 img-hero">
+      <img src="img/hero2.png" alt="" class="position-absolute end-0 bottom-0 img-hero">
     </div>
   </section>
 
@@ -255,16 +258,16 @@ if (isset($_SESSION['username'])){
           <div class="col-auto filter_jenis layanan">
             <select name="jenis_layanan" class="form-select" id="inputGroupSelect01">
               <option selected class="option" value="">Jenis Layanan</option>
-              <option class="option" value="Dekorasi">Dekorasi</option>
-              <option class="option" value="Katering">Katering</option>
-              <option class="option" value="Makeup">Makeup</option>
-              <option class="option" value="SoundSystem">Sound System</option>
-              <option class="option" value="MusicBand">Music Band</option>
-              <option class="option" value="Gedung">Gedung</option>
-              <option class="option" value="FotoVideo">Foto & Video</option>
-              <option class="option" value="SewaMobil">Sewa Mobil</option>
-              <option class="option" value="GaunPengantin">Gaun Pengantin</option>
-              <option class="option" value="MC">MC</option>
+              <option class="option" value="dekorasi">Dekorasi</option>
+              <option class="option" value="katering">Katering</option>
+              <option class="option" value="makeup">Makeup</option>
+              <option class="option" value="soundsystem">Sound System</option>
+              <option class="option" value="musicband">Music Band</option>
+              <option class="option" value="gedung">Gedung</option>
+              <option class="option" value="fotovideo">Foto & Video</option>
+              <option class="option" value="sewamobil">Sewa Mobil</option>
+              <option class="option" value="gaunpengantin">Gaun Pengantin</option>
+              <option class="option" value="mc">MC</option>
             </select>
           </div>
 
@@ -356,7 +359,7 @@ if (isset($_SESSION['username'])){
 
         <div class="col-auto text-center">
           <div class="col-md-3">
-          <a href="vendor/SoundSystem.php"><div class="card-kategori">
+          <a href="vendor/soundsystem.php"><div class="card-kategori">
               <div class="circle-icon ">
                 <!-- <img src="img/icon_sound.png" alt=""> -->
                 <!-- <i class="fa-brands fa-soundcloud"></i> -->
@@ -370,7 +373,7 @@ if (isset($_SESSION['username'])){
 
         <div class="col-auto text-center">
           <div class="col-md-3">
-          <a href="vendor/Musicband.php"><div class="card-kategori">
+          <a href="vendor/musicband.php"><div class="card-kategori">
               <div class="circle-icon ">
                 <i class="fa-solid fa-music"></i>
                 <h4>Music Band</h4>
@@ -381,7 +384,7 @@ if (isset($_SESSION['username'])){
 
         <div class="col-auto text-center">
           <div class="col-md-3">
-          <a href="vendor/Gedung.php"><div class="card-kategori">
+          <a href="vendor/gedung.php"><div class="card-kategori">
               <div class="circle-icon ">
                 <i class="fa-solid fa-landmark-dome"></i>
                 <h4>Gedung Pernikahan</h4>
@@ -449,7 +452,7 @@ if (isset($_SESSION['username'])){
             <h3>Tips & Trik Pernikahan</h3>
             <p>Pernikahan adalah acara sakral yang dilakukan oleh 2 orang yang saling mencintai satu sama lain. Setiap
               pasangan menginginkan acara pernikahannya berjalan dengan lancar sesuai apa yang diharapkan.</p>
-            <a href="#" class="btn_learnmore">Learn More</a>
+            <a href="https://www.instagram.com/venika.id/" class="btn_learnmore">Learn More</a>
           </div>
         </div>
       </div>
@@ -519,26 +522,26 @@ if (isset($_SESSION['username'])){
 
   <!-- FOOTER SECTION -->
   <footer class="bg">
-    <div class="footer-content">
-      <h3>Venika</h3>
-      <p>Venika adalah platform digital yang menyediakan layanan informasi vendor kebutuhan di daerah Semarang dan
-        sekitarnya.</p>
-      <ul class="fast_link">
-        <li>Kontak</li>
-        <li>Vendor</li>
-        <li>Tentang Kami</li>
-        <li>FAQ</li>
-      </ul>
-      <ul class="sosmed">
-        <li><a href="#"><img src="img/facebook-circle-fill.png"></a></li>
-        <li><a href="#"><img src="img/instagram-fill.png"></a></li>
-        <li><a href="#"><img src="img/twitter-fill.png"></a></li>
-      </ul>
-    </div>
-    <div class="footer-bottom">
-      <p>Copyright &copy;2022 Venika | designed by <span>Venika</span></p>
-    </div>
-  </footer>
+        <div class="footer-content">
+          <h3>Venika</h3>
+          <p>Venika adalah platform digital yang menyediakan layanan informasi vendor kebutuhan pernikahan di daerah Semarang dan sekitarnya.</p>
+          <ul class="fast_link">
+            <a href="tentang_kami.php?#kategori" style="color: #fff;"><li>Kontak</li></a>
+            <a href="#kategori" style="color: #fff;"><li>Vendor</li></a>
+            <a href="tentang_kami.php" style="color: #fff;"><li>Tentang Kami</li></a>
+            <a href="faq.php" style="color: #fff;"><li>FAQ</li></a>
+          </ul>
+          <ul class="sosmed">
+            <li><a href="#"><img src="img/facebook-circle-fill.png"></a></li>
+            <li><a href="https://www.instagram.com/venika.id/"><img src="img/instagram-fill.png"></a></li>
+            <li><a href="#"><img src="img/twitter-fill.png"></a></li>
+          </ul>
+        </div>
+        <div class="footer-bottom">
+          <p>Copyright &copy;2022 Venika | designed by <span>Venika</span></p>
+        </div>
+      </footer>
+
 
 
   <!-- Optional JavaScript; choose one of the two! -->

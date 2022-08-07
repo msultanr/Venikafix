@@ -48,10 +48,13 @@ if (!isset($_SESSION['is_login'])) {
 
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/dashboard_vendor.css">
+    <link rel="stylesheet" href="css/dashboard_vendor1.css">
 
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/3709d60cb3.js" crossorigin="anonymous"></script>
+
+    <!-- ICON LOGO WEB -->
+    <link rel="icon" href="../img/icon_venika.png" type="image/x-icon">
 
     <!-- TinyMCE -->
     <script src="tinymce/js/tinymce/tinymce.min.js"></script>
@@ -201,11 +204,11 @@ if (!isset($_SESSION['is_login'])) {
 		<div class="ads">
 			<div class="wrapper">
 				<ul class="fast_link">
-					<li>Kontak</li>
-					<li>Vendor</li>
-					<li>Tentang Kami</li>
-					<li>FAQ</li>
-				  </ul>
+                    <a href="../tentang_kami.php?#kategori" style="color: #fff;"><li>Kontak</li></a>
+                    <a href="../#kategori" style="color: #fff;"><li>Vendor</li></a>
+                    <a href="../tentang_kami.php" style="color: #fff;"><li>Tentang Kami</li></a>
+                    <a href="../faq.php" style="color: #fff;"><li>FAQ</li></a>
+				</ul>
 
 				<p>Copyright &copy;2022 Venika | designed by <span>Venika</span></p>
 			</div>
@@ -325,7 +328,7 @@ if (!isset($_SESSION['is_login'])) {
 
                     <?php
                         if(isset($_FILES["NamaFile"])){
-                        $direktori = "../photo/";
+                        $direktori = "../galeri/";
                         $file_name = $_FILES['NamaFile']['name'];
                         move_uploaded_file($_FILES['NamaFile']['tmp_name'], $direktori.$file_name);
 

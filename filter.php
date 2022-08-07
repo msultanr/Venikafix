@@ -180,7 +180,7 @@ if (isset($_SESSION['username'])){
                           echo '<img src="img/circle-user-solid.svg" class="profile-pic-div" alt="User-Profile-Image">';
                           }
                           else{
-                          echo '<img src="photo/' . $photo . '" class="profile-pic-div" alt="User-Profile-Image">'; }}}
+                          echo '<img src="photo/' . $photo . '" class="profile-pic-div" alt="User-Profile-Image">'; }}?>
                           <?php echo' <span>' . $_SESSION['username'] . '</span> ';?>
                           <i class="fas fa-angle-down toggle"></i>
                         </a>

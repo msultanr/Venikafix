@@ -59,7 +59,7 @@ if (isset($_POST['register'])) {
 				// beri pesan dan dialihkan ke halaman admin
 				echo "<script>alert('Registrasi Berhasil!');
 				</script>";
-				echo "<script>document.location.href='../index.php';</script>";
+				echo "<script>document.location.href='../login_vendor.php';</script>";
 				}
 			else{
 					// beri pesan dan dialihkan ke halaman login

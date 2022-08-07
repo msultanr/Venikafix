@@ -32,10 +32,13 @@ if ($_SESSION['tipe'] != "vendor"){
 
 
 	<!-- CSS -->
-	<link rel="stylesheet" href="css/dashboard_vendor.css">
+	<link rel="stylesheet" href="css/dashboard_vendor1.css">
 
 	<!-- Font Awesome -->
 	<script src="https://kit.fontawesome.com/3709d60cb3.js" crossorigin="anonymous"></script>
+
+	<!-- ICON LOGO WEB -->
+    <link rel="icon" href="../img/icon_venika.png" type="image/x-icon">
 
 	<title>Venika</title>
 </head>
@@ -44,8 +47,8 @@ if ($_SESSION['tipe'] != "vendor"){
 
 	<!-- SIDEBAR -->
 	<section id="sidebar">
-		<a href="../" class="brand">
-			<i class="fa-brands fa-slack icon"></i>
+		<a href="../index.php" class="brand">
+		    <i class="icon"><img src="img/venikasvgfix2.svg" width="30" height="30" class="" alt=""></i>
 			Venika
 		</a>
 		<ul class="side-menu">
@@ -96,20 +99,19 @@ if ($_SESSION['tipe'] != "vendor"){
 			</li>
 		</ul>
 
-		<!-- Footer -->
-		<div class="ads">
+		 <!-- Footer -->
+		 <div class="ads">
 			<div class="wrapper">
 				<ul class="fast_link">
-					<li>Kontak</li>
-					<li>Vendor</li>
-					<li>Tentang Kami</li>
-					<li>FAQ</li>
+                    <a href="../tentang_kami.php?#kategori" style="color: #fff;"><li>Kontak</li></a>
+                    <a href="../#kategori" style="color: #fff;"><li>Vendor</li></a>
+                    <a href="../tentang_kami.php" style="color: #fff;"><li>Tentang Kami</li></a>
+                    <a href="../faq.php" style="color: #fff;"><li>FAQ</li></a>
 				</ul>
 
 				<p>Copyright &copy;2022 Venika | designed by <span>Venika</span></p>
 			</div>
 		</div>
-	</section>
 
 	<!-- NAVBAR -->
 	<section id="content">

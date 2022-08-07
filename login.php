@@ -9,6 +9,8 @@
       src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous">
     </script> -->
     <script src="https://kit.fontawesome.com/3709d60cb3.js" crossorigin="anonymous"></script>
+      <!-- ICON LOGO WEB -->
+    <link rel="icon" href="img/icon_venika.png" type="image/x-icon">
     <title>Venika</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -17,26 +19,26 @@
         <div class="forms-container">
             <div class="signin-signup">
                 <form action="login/code_login_user.php" method="POST" class="sign-in-form">
-                    
+
                     <h2 class="title">User Login</h2>
-                    
+
                     <div class="input-field">
                         <i class="fas fa-user"></i>
-                        <input type="text" 
-                        name="username" 
+                        <input type="text"
+                        name="username"
                         placeholder="Username">
                     </div>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
-                        <input type="password" 
-                        name="password" 
+                        <input type="password"
+                        name="password"
                         placeholder="Password">
                     </div>
 
                     <p class="lupa_pass">Lupa Password ?</p>
-                    
+
                     <input type="submit" name="login" value="login" class="btn solid">
-                    
+
                 </form>
 
                 <form action="login/register_user.php" method="POST" class="sign-up-form">
@@ -75,7 +77,7 @@
                      <button class="btn transparent" id="sign-up-btn">Register</button>
 
                      <p>
-                         Login Sebagai Vendor ? 
+                         Login Sebagai Vendor ?
                          <a href="login_vendor.php" class="daftar_vendor"> Login Vendor</a>
                     </p>
                     </div>

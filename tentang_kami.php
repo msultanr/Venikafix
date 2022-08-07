@@ -24,8 +24,11 @@ $id = $_SESSION['id'];
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
 
     <!-- Style CSS -->
-    <link rel="stylesheet" href="profile/css/tentang_kami.css">
-    <link rel="stylesheet" href="profile/css/style_nav_login.css">
+    <link rel="stylesheet" href="css/tentang_kami.css">
+    <link rel="stylesheet" href="css/style_nav_login.css">
+
+    <!-- ICON LOGO WEB -->
+    <link rel="icon" href="img/icon_venika.png" type="image/x-icon">
 
     <!-- Style Responsive -->
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
@@ -46,8 +49,8 @@ if (isset($_SESSION['username'])){
   <!-- Navbar Login -->
   <nav class="navbar navbar-expand-lg bg-transparent navbar-light position-fixed w-100">
     <div class="container">
-      <a class="navbar-brand" href="#">
-        <img src="profile/img/venikasvgfix2.svg" alt="" width="30" height="24"
+      <a class="navbar-brand" href="index.php" style="color: #FF7171;">
+        <img src="profile/img/venikasvgfix2.svg" alt="" width="30" height="30"
           class="d-inline-block align-text-top" me-3>Venika</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -216,7 +219,7 @@ if (isset($_SESSION['username'])){
                     <h2>TENTANG KAMI</h2>
                 </div>
                 <div class="right">
-                    <img src="img/1.jpg" alt="">
+                    <img src="img/tentang_venika.jpg" alt="" style=" box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.10);">
                     <div class="features">
                         <h3>Venika</h3>
                         <p>Venika adalah platform digital yang menyediakan layanan informasi vendor kebutuhan pernikahan
@@ -240,7 +243,7 @@ if (isset($_SESSION['username'])){
                 <div class="kontak_venika">
                     <div class="col-auto text-center">
                         <div class="col-md-3">
-                            <a href="https://wa.me/628988325479?text=Saya%20tertarik%20dengan%20layanan%20vendor%20yang%20dijual">
+                            <a href="https://wa.me/628988325479?text=Hai,%20Saya%20ingin%20tahu%20informasi%20venika%20lebih%20banyak">
                                 <div class="card-kategori">
                                     <div class="circle-icon ">
                                         <i class="fa-brands fa-square-whatsapp"></i>
@@ -253,7 +256,7 @@ if (isset($_SESSION['username'])){
 
                     <div class="col-auto text-center">
                         <div class="col-md-3">
-                            <a href="https://www.instagram.com/venika_id/">
+                            <a href="https://www.instagram.com/venika.id/">
                                 <div class="card-kategori">
                                     <div class="circle-icon ">
                                         <i class="fa-brands fa-square-instagram"></i>
@@ -289,10 +292,10 @@ if (isset($_SESSION['username'])){
             <p>Venika adalah platform digital yang menyediakan layanan informasi vendor kebutuhan di daerah Semarang dan
                 sekitarnya.</p>
             <ul class="fast_link">
-                <li>Kontak</li>
-                <li>Vendor</li>
-                <li>Tentang Kami</li>
-                <li>FAQ</li>
+              <a href="tentang_kami.php?#kategori" style="color: #fff;"><li>Kontak</li></a>
+              <a href="#kategori" style="color: #fff;"><li>Vendor</li></a>
+              <a href="tentang_kami.php" style="color: #fff;"><li>Tentang Kami</li></a>
+              <a href="faq.php" style="color: #fff;"><li>FAQ</li></a>
             </ul>
             <ul class="sosmed">
                 <li><a href="#"><img src="img/facebook-circle-fill.png"></a></li>

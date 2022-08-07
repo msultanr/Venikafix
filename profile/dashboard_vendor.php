@@ -25,7 +25,7 @@ $id = $_SESSION['id'];
 	<!-- <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'> -->
 
 	<!-- CSS -->
-	<link rel="stylesheet" href="css/dashboard_vendor.css">
+	<link rel="stylesheet" href="css/dashboard_vendor1.css">
 	<!-- <link rel="stylesheet" href="css/style_nav_login.css"> -->
 
 	<!-- Font Google -->
@@ -37,6 +37,9 @@ $id = $_SESSION['id'];
 	<!-- Font Awesome -->
 	<script src="https://kit.fontawesome.com/3709d60cb3.js" crossorigin="anonymous"></script>
 
+	<!-- ICON LOGO WEB -->
+    <link rel="icon" href="../img/icon_venika.png" type="image/x-icon">
+
 	<title>Venika</title>
 </head>
 
@@ -45,7 +48,7 @@ $id = $_SESSION['id'];
 	<!-- SIDEBAR -->
 	<section id="sidebar">
 		<a href="../index.php" class="brand">
-			<i class="fa-brands fa-slack icon"></i>
+		<i class="icon"><img src="img/venikasvgfix2.svg" width="30" height="30"class="" alt=""></i>
 			Venika
 		</a>
 		<ul class="side-menu">
@@ -94,6 +97,20 @@ $id = $_SESSION['id'];
 				</a>
 			</li>
 		</ul>
+
+		<!-- Footer -->
+		<div class="ads">
+			<div class="wrapper footer_dashboard_user">
+				<ul class="fast_link">
+                    <a href="../tentang_kami.php?#kategori" style="color: #fff;"><li>Kontak</li></a>
+                    <a href="../#kategori" style="color: #fff;"><li>Vendor</li></a>
+                    <a href="../tentang_kami.php" style="color: #fff;"><li>Tentang Kami</li></a>
+                    <a href="../faq.php" style="color: #fff;"><li>FAQ</li></a>
+				</ul>
+
+				<p>Copyright &copy;2022 Venika | designed by <span>Venika</span></p>
+			</div>
+		</div>
 	</section>
 
 	<!-- NAVBAR -->

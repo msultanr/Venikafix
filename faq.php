@@ -25,7 +25,7 @@ $id = $_SESSION['id'];
 
     <!-- Style CSS -->
     <link rel="stylesheet" href="profile/css/faq.css">
-    <link rel="stylesheet" href="profile/css/style_nav_login.css">
+    <link rel="stylesheet" href="css/style_nav_login.css">
 
     <!-- Style Responsive -->
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
@@ -35,6 +35,9 @@ $id = $_SESSION['id'];
     src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous">
   </script> -->
     <script src="https://kit.fontawesome.com/3709d60cb3.js" crossorigin="anonymous"></script>
+
+      <!-- ICON LOGO WEB -->
+    <link rel="icon" href="img/icon_venika.png" type="image/x-icon">
 
     <title>Venika</title>
 </head>
@@ -46,8 +49,8 @@ if (isset($_SESSION['username'])){
   <!-- Navbar Login -->
   <nav class="navbar navbar-expand-lg bg-transparent navbar-light position-fixed w-100">
     <div class="container">
-      <a class="navbar-brand" href="#">
-        <img src="../profile/img/venikasvgfix2.svg" alt="" width="30" height="24"
+    <a class="navbar-brand" href="index.php" style="color: #FF7171;">
+        <img src="profile/img/venikasvgfix2.svg" alt="" width="30" height="30"
           class="d-inline-block align-text-top" me-3>Venika</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -273,10 +276,10 @@ if (isset($_SESSION['username'])){
             <p>Venika adalah platform digital yang menyediakan layanan informasi vendor kebutuhan di daerah Semarang dan
                 sekitarnya.</p>
             <ul class="fast_link">
-                <li>Kontak</li>
-                <li>Vendor</li>
-                <li>Tentang Kami</li>
-                <li>FAQ</li>
+              <a href="tentang_kami.php?#kategori" style="color: #fff;"><li>Kontak</li></a>
+              <a href="#kategori" style="color: #fff;"><li>Vendor</li></a>
+              <a href="tentang_kami.php" style="color: #fff;"><li>Tentang Kami</li></a>
+              <a href="faq.php" style="color: #fff;"><li>FAQ</li></a>
             </ul>
             <ul class="sosmed">
                 <li><a href="#"><img src="img/facebook-circle-fill.png"></a></li>

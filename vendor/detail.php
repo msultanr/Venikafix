@@ -26,6 +26,7 @@ session_start();
     $facebook = $cek["facebook"];
     $twitter = $cek["twitter"];
     $website = $cek["website"];
+    $photo = $cek["photo"];
 
 ?>
 
@@ -57,6 +58,9 @@ session_start();
     <link rel="stylesheet" href="css/style_nav_login.css">
     <link rel="stylesheet" href="css/det3.css">
 
+    <!-- ICON LOGO WEB -->
+    <link rel="icon" href="img/icon_venika.png" type="image/x-icon">
+
     <!-- Style Responsive -->
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
 
@@ -73,8 +77,8 @@ if (isset($_SESSION['username'])){
   <!-- Navbar Login -->
   <nav class="navbar navbar-expand-lg bg-transparent navbar-light position-fixed w-100">
     <div class="container">
-      <a class="navbar-brand" href="#">
-        <img src="../profile/img/venikasvgfix2.svg" alt="" width="30" height="24"
+    <a class="navbar-brand" href="../index.php" style="color: #FF7171;">
+        <img src="../profile/img/venikasvgfix2.svg" alt="" width="30" height="30"
           class="d-inline-block align-text-top" me-3>Venika</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -89,7 +93,7 @@ if (isset($_SESSION['username'])){
             <a class="nav-link" href="../#kategori">Vendor</a>
           </li>
           <li class="nav-item mx-3">
-            <a class="nav-link" href="tentang_kami.php">Tentang Kami</a>
+            <a class="nav-link" href="../tentang_kami.php">Tentang Kami</a>
           </li>
         </ul>
 
@@ -104,45 +108,54 @@ if (isset($_SESSION['username'])){
 
                     <ul class="nav-right">
                       <li class="user-profile header-notification">
-                      <a href="#!" class="arrowdown">
+                        <a href="#!" class="arrowdown">
                         <?php
                         if($_SESSION['tipe'] == 'user'){
                               $sql = mysqli_query($koneksi,
-                              "SELECT photo From user WHERE id = '$id'");
+                              "SELECT photo From user WHERE id = '$id_user'");
                               while ($cek = mysqli_fetch_assoc($sql)){
                                   $photo = $cek['photo'];
                                   if ($photo == NULL){
-                                    echo '<img src="img/circle-user-solid.svg" class="profile-pic-div img-radius" alt="User-Profile-Image">';
+                                    echo '<img src="img/circle-user-solid.svg" class="profile-pic-div" alt="User-Profile-Image">';
                                     }
                                     else{
-                                    echo '<img src="../photo/' . $photo . '" class="profile-pic-div img-radius" alt="User-Profile-Image">'; }}}
+                                    echo '<img src="../photo/' . $photo . '" class="profile-pic-div" alt="User-Profile-Image">'; }}}
                         if($_SESSION['tipe'] == 'vendor'){
                           $sql = mysqli_query($koneksi,
-                              "SELECT photo From vendor WHERE id = '$id'");
+                              "SELECT photo From vendor WHERE id = '$id_user'");
                               while ($cek = mysqli_fetch_assoc($sql)){
                                   $photo = $cek['photo'];
                                   if ($photo == NULL){
-                                    echo '<img src="img/circle-user-solid.svg" class="profile-pic-div img-radius" alt="User-Profile-Image">';
+                                    echo '<img src="img/circle-user-solid.svg" class="profile-pic-div" alt="User-Profile-Image">';
                                     }
                                     else{
-                                    echo '<img src="../photo/' . $photo . '" class="profile-pic-div img-radius" alt="User-Profile-Image">'; }}}
-                         ?>
+                                    echo '<img src="../photo/' . $photo . '" class="profile-pic-div" alt="User-Profile-Image">'; }}
+                        } ?>
                           <?php echo' <span>' . $_SESSION['username'] . '</span> ';?>
                           <i class="fas fa-angle-down toggle"></i>
                         </a>
                         <ul class="show-notification profile-notification">
                           <li class="">
-                            <a href="#!">
+                            <?php
+                            if($_SESSION['tipe'] == "user"){
+                            ?>
+                            <a href="../profile/dashboard_user.php">
                               <i class="fas fa-user"></i> Lihat Profil
                             </a>
+                            <?php }
+                            else{?>
+                            <a href="../profile/dashboard_vendor.php">
+                              <i class="fas fa-user"></i> Lihat Profil
+                            </a>
+                            <?php }?>
                           </li>
                           <li class="">
-                            <a href="#">
+                            <a href="../faq.php">
                               <i class="fas fa-question"></i> FAQ
                             </a>
                           </li>
                           <li class="">
-                            <a href="../login/logout.php">
+                            <a href="../logout.php">
                               <i class="fas fa-arrow-right-from-bracket"></i> Keluar
                             </a>
                           </li>
@@ -273,12 +286,29 @@ if (isset($_SESSION['username'])){
     <section class="detail" id="detail">
         <div class="product-content">
             <?php echo '<h2 class="product-title">Detail Layanan ' . $nama_layanan . '</h2>' ?>
+            <?php
+            $sql = mysqli_query($koneksi,
+            "SELECT * FROM favorit where id_vendor ='$id_vendor' and id_jenis ='$id_jenis' and id_user='$id_user'");
+            if(mysqli_num_rows($sql) > 0){
+              ?>
+              <form action="hapus_favorit.php" method="POST">
+            <?php echo '<input type="hidden" name="id_vendor" value="' . $id_vendor . '">'; ?>
+            <?php echo '<input type="hidden" name="id_jenis" value="' . $id_jenis . '">';
+            ?>
+              <!-- Button Jika Sudah Klik Favorit -->
+            <button type="submit" name="submit" class="btn_plus2" style="width:146px"><i class="fa-solid fa-heart"></i>Hapus favorit</button></a> <br>
+            </form>
+
+            <?php }
+            else { ?>
             <form action="tambah_favorit.php" method="POST">
             <?php echo '<input type="hidden" name="id_vendor" value="' . $id_vendor . '">'; ?>
             <?php echo '<input type="hidden" name="id_jenis" value="' . $id_jenis . '">';
             ?>
-              <button type="submit" name="submit" class="btn_plus fa-solid fa-heart"> Favorit</button> <br>
+              <!-- <button type="submit" name="submit" class="btn_plus fa-solid fa-heart"> Favorit</button> <br> -->
+            <button type="submit" name="submit" class="btn_plus"><i class="fa-solid fa-heart"></i> Favorit</button></a> <br>
             </form>
+            <?php } ?>
 
             <!-- <div class = "product-rating">
                 <i class = "fas fa-star"></i>
@@ -440,16 +470,16 @@ if (isset($_SESSION['username'])){
                       <label for="validationCustom04">Jenis Layanan</label>
                       <select name="jenis_layanan" class="form-select" aria-label="Default select example" id="validationDefault03" required>
                         <option value="">Pilih Jenis Layanan</option>
-                        <option value="Dekorasi">Dekorasi</option>
-                        <option value="Foto & Video">Foto & Video</option>
-                        <option value="Gaun Pengantin">Gaun Pengantin</option>
-                        <option value="Gedung">Gedung</option>
-                        <option value="Katering">Katering</option>
-                        <option value="Makeup">Makeup</option>
-                        <option value="MC">MC</option>
-                        <option value="Band">Music Band</option>
-                        <option value="Sewa Mobil">Sewa Mobil</option>
-                        <option value="Sound System">Sound System</option>
+                        <option value="dekorasi">Dekorasi</option>
+                        <option value="fotovideo">Foto & Video</option>
+                        <option value="gaunpengantin">Gaun Pengantin</option>
+                        <option value="gedung">Gedung</option>
+                        <option value="katering">Katering</option>
+                        <option value="makeup">Makeup</option>
+                        <option value="mc">MC</option>
+                        <option value="band">Music Band</option>
+                        <option value="sewamobil">Sewa Mobil</option>
+                        <option value="soundsystem">Sound System</option>
                       </select>
                     </div>
                     <div class="inputBox">
@@ -485,14 +515,14 @@ if (isset($_SESSION['username'])){
             <p>Venika adalah platform digital yang menyediakan layanan informasi vendor kebutuhan di daerah Semarang dan
                 sekitarnya.</p>
             <ul class="fast_link">
-                <li>Kontak</li>
-                <li>Vendor</li>
-                <li>Tentang Kami</li>
-                <li>FAQ</li>
+              <a href="../tentang_kami.php?#kategori" style="color: #fff;"><li>Kontak</li></a>
+              <a href="../#kategori" style="color: #fff;"><li>Vendor</li></a>
+              <a href="../tentang_kami.php" style="color: #fff;"><li>Tentang Kami</li></a>
+              <a href="../faq.php" style="color: #fff;"><li>FAQ</li></a>
             </ul>
             <ul class="sosmed">
                 <li><a href="#"><img src="img/facebook-circle-fill.png"></a></li>
-                <li><a href="#"><img src="img/instagram-fill.png"></a></li>
+                <li><a href="https://www.instagram.com/venika.id/"><img src="img/instagram-fill.png"></a></li>
                 <li><a href="#"><img src="img/twitter-fill.png"></a></li>
             </ul>
         </div>

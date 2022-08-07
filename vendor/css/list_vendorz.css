@@ -17,21 +17,15 @@ body {
     transition: all ease-in 0.3s;
 }
 
-
 .nav-color {
-    background-color: #ffe8e8;
+    background-color: #F9C8C8;
     transition: all ease-in-out 0.3s;
 }
 
 /* Navbar */
 /* bold tulisan logo pd navbar */
 .navbar-brand {
-    font-size: 24px;
     font-weight: 700;
-}
-
-.navbar-brand img {
-    margin-right: 20px;
 }
 
 .nav-link {
@@ -88,18 +82,13 @@ body {
     width: 100%;
 }
 
-#hero2{
-    height:100px;
-    width: 100%;
-}
-
 .hero-tagline h1 {
     position: absolute;
-    width: 550px;
+    width: 560px;
     height: 96px;
     left: 100px;
     top: 225px;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 44px;
     line-height: 48px;
     color: #000;
@@ -185,7 +174,7 @@ h2 {
     border-radius: 12px;
     /* background-color: transparent; */
     background-color: #F0F0F0;
-    
+
     /* margin-left: 20px; */
     /* margin-left: 10px; */
     margin-top: 30px;
@@ -206,7 +195,7 @@ h2 {
     border-radius: 12px;
     /* background-color: transparent; */
     background-color: #F0F0F0;
-    
+
     /* margin-left: 20px; */
     /* margin-left: 10px; */
     margin-top: 30px;
@@ -255,6 +244,13 @@ h2 {
 
 .card img {
     border-radius: 30px 30px 0 0;
+    height: 265px;
+}
+
+#photo {
+    height: 265px;
+    width: 100%;
+	object-fit: cover;
 }
 
 .card:hover {
@@ -285,8 +281,11 @@ h2 {
 
 .card-body i {
     color: #D0D0D0;
-    float: right;
-    margin-right: 20px;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    /* padding-left: 280px; */
+    /* margin-right: 20px; */
     font-size: 24px;
 }
 
@@ -295,6 +294,14 @@ h2 {
     transition: all ease-in 0.2s;
 }
 
+/* Vendor Favorit */
+.card-body .love {
+    color: #fd4646;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    font-size: 24px;
+}
 
 
 
@@ -397,9 +404,9 @@ h2 {
 }
 
 .footer-bottom span {
-    /* text-transform: uppercase; */
-    opacity: .4;
-    font-weight: 200;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
 }
 
 
@@ -478,22 +485,25 @@ h2 {
         width: 14rem;
         margin-top: 30px;
     }
-    
+
     .card img {
         border-radius: 30px 30px 0 0;
+        height: 100%;
+	    width: 100%;
+	    object-fit: cover;
     }
-    
+
     .card-body h4 {
         font-weight: 600;
         font-size: 18px;
         line-height: 24px;
     }
-    
+
     .card-body p {
         font-weight: 400;
         font-size: 14px;
     }
-    
+
     .card-body span {
         line-height: 20px;
         font-weight: 500;
@@ -574,18 +584,18 @@ h2 {
         width: 10.5rem;
         margin-top: 30px;
     }
-    
+
     .card-body h4 {
         font-weight: 600;
         font-size: 14px;
         line-height: 20px;
     }
-    
+
     .card-body p {
         font-weight: 400;
         font-size: 12px;
     }
-    
+
     .card-body span {
         line-height: 20px;
         font-weight: 500;
@@ -596,7 +606,7 @@ h2 {
         margin-right: 20px;
         font-size: 18px;
     }
-    
+
       /* footer */
     .footer-content p {
         max-width: 400px;
@@ -689,18 +699,18 @@ h2 {
     .card img {
         border-radius: 12px 12px 0 0;
     }
-    
+
     .card-body h4 {
         font-weight: 600;
         font-size: 14px;
         line-height: 20px;
     }
-    
+
     .card-body p {
         font-weight: 400;
         font-size: 12px;
     }
-    
+
     .card-body span {
         line-height: 20px;
         font-weight: 500;

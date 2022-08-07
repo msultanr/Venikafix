@@ -27,6 +27,9 @@ if ($_SESSION['tipe'] != "user"){
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/3709d60cb3.js" crossorigin="anonymous"></script>
 
+    <!-- ICON LOGO WEB -->
+    <link rel="icon" href="../img/icon_venika.png" type="image/x-icon">
+
     <title>Venika</title>
 </head>
 <?php
@@ -37,9 +40,9 @@ if (isset($_SESSION['username'])){
     <!-- SIDEBAR -->
     <section id="sidebar">
         <a href="../index.php" class="brand">
-            <i class="fa-brands fa-slack icon"></i>
-            Venika
-        </a>
+		    <i class="icon"><img src="img/venikasvgfix2.svg" width="30" height="30" class="" alt=""></i>
+			Venika
+		</a>
         <ul class="side-menu">
             <li>
                 <a href="dashboard_user.php" class="active">
@@ -72,11 +75,11 @@ if (isset($_SESSION['username'])){
 		<div class="ads">
 			<div class="wrapper footer_dashboard_user">
 				<ul class="fast_link">
-					<li>Kontak</li>
-					<li>Vendor</li>
-					<li>Tentang Kami</li>
-					<li>FAQ</li>
-				  </ul>
+                    <a href="../tentang_kami.php?#kategori" style="color: #fff;"><li>Kontak</li></a>
+                    <a href="../#kategori" style="color: #fff;"><li>Vendor</li></a>
+                    <a href="../tentang_kami.php" style="color: #fff;"><li>Tentang Kami</li></a>
+                    <a href="../faq.php" style="color: #fff;"><li>FAQ</li></a>
+				</ul>
 
 				<p>Copyright &copy;2022 Venika | designed by <span>Venika</span></p>
 			</div>
@@ -276,13 +279,14 @@ if (isset($_SESSION['username'])){
                                 <label for="validationCustom01">Username</label>
                                 <?php echo '<input type="text" name="username" placeholder="" value="' . $user . '" id="validationDefault01" required>'; ?>
                             </div>
-                            <div class="inputBox">
-                                <label for="validationCustom01">Email</label>
-                                <?php echo '<input type="text" name="email" placeholder="" value="' . $email . '"  id="validationDefault01" required>'; ?>
-                            </div>
 
                         </div>
                         <div class="box">
+
+                        <div class="inputBox">
+                                <label for="validationCustom01">Email</label>
+                                <?php echo '<input type="text" name="email" placeholder="" value="' . $email . '"  id="validationDefault01" required>'; ?>
+                            </div>
                             <div class="inputBox">
                                 <label for="validationCustom02">Nomor Telephone</label>
                                 <?php echo '<input type="text" name="no_hp" placeholder="" value="' . $no_hp .'" id="validationDefault02" required>'; ?>

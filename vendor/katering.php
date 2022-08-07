@@ -7,11 +7,10 @@
     echo "<script> alert('Login Terlebih Dahulu!')</script>";
     echo "<script>document.location.href='../login.php';</script>";
     die();
+
+
 }
-    $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-    $id = parse_url($actual_link, PHP_URL_QUERY);
-    $id_jenis = substr($id,2);
-    $id_vendor = substr($id,0,1);
+$id = $_SESSION['id'];
 ?>
 <!doctype html>
 <html lang="en">
@@ -32,8 +31,11 @@
     <link rel="stylesheet" href="css/list_vendor.css">
     <link rel="stylesheet" href="css/style_nav_login.css">
 
+    <!-- ICON LOGO WEB -->
+    <link rel="icon" href="img/icon_venika.png" type="image/x-icon">
+
     <!-- Style Responsive -->
-    <link rel="stylesheet" href="css/responsive.css">
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
 
     <script
       src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous">
@@ -54,8 +56,8 @@ if (isset($_SESSION['username'])){
   <!-- Navbar Login -->
   <nav class="navbar navbar-expand-lg bg-transparent navbar-light position-fixed w-100">
     <div class="container">
-      <a class="navbar-brand" href="#">
-        <img src="../profile/img/venikasvgfix2.svg" alt="" width="30" height="24"
+      <a class="navbar-brand" href="../index.php" style="color: #FF7171;">
+        <img src="../profile/img/venikasvgfix2.svg" alt="" width="30" height="30"
           class="d-inline-block align-text-top" me-3>Venika</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,16 +65,14 @@ if (isset($_SESSION['username'])){
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mx-auto">
-
           <li class="nav-item mx-3">
-
             <a class="nav-link active" aria-current="page" href="../">Beranda</a>
           </li>
           <li class="nav-item mx-3">
             <a class="nav-link" href="../#kategori">Vendor</a>
           </li>
           <li class="nav-item mx-3">
-            <a class="nav-link" href="tentang_kami.php">Tentang Kami</a>
+            <a class="nav-link" href="../tentang_kami.php">Tentang Kami</a>
           </li>
         </ul>
 
@@ -87,45 +87,54 @@ if (isset($_SESSION['username'])){
 
                     <ul class="nav-right">
                       <li class="user-profile header-notification">
-                      <a href="#!" class="arrowdown">
-                        <?php
-                        if($_SESSION['tipe'] == 'user'){
-                              $sql = mysqli_query($koneksi,
-                              "SELECT photo From user WHERE id = '$id'");
-                              while ($cek = mysqli_fetch_assoc($sql)){
-                                  $photo = $cek['photo'];
-                                  if ($photo == NULL){
-                                    echo '<img src="img/circle-user-solid.svg" class="profile-pic-div" alt="User-Profile-Image">';
-                                    }
-                                    else{
-                                    echo '<img src="../photo/' . $photo . '" class="profile-pic-div" alt="User-Profile-Image">'; }}}
-                        if($_SESSION['tipe'] == 'vendor'){
-                          $sql = mysqli_query($koneksi,
-                              "SELECT photo From vendor WHERE id = '$id'");
-                              while ($cek = mysqli_fetch_assoc($sql)){
-                                  $photo = $cek['photo'];
-                                  if ($photo == NULL){
-                                    echo '<img src="img/circle-user-solid.svg" class="profile-pic-div" alt="User-Profile-Image">';
-                                    }
-                                    else{
-                                    echo '<img src="../photo/' . $photo . '" class="profile-pic-div" alt="User-Profile-Image">'; }}
-                        } ?>
+                        <a href="#!" class="arrowdown">
+                          <?php
+                          if($_SESSION['tipe'] == 'user'){
+                                $sql = mysqli_query($koneksi,
+                                "SELECT photo From user WHERE id = '$id'");
+                                while ($cek = mysqli_fetch_assoc($sql)){
+                                    $photo = $cek['photo'];
+                                    if ($photo == NULL){
+                                      echo '<img src="img/circle-user-solid.svg" class="profile-pic-div" alt="User-Profile-Image">';
+                                      }
+                                      else{
+                                      echo '<img src="../photo/' . $photo . '" class="profile-pic-div" alt="User-Profile-Image">'; }}}
+                          if($_SESSION['tipe'] == 'vendor'){
+                            $sql = mysqli_query($koneksi,
+                                "SELECT photo From vendor WHERE id = '$id'");
+                                while ($cek = mysqli_fetch_assoc($sql)){
+                                    $photo = $cek['photo'];
+                                    if ($photo == NULL){
+                                      echo '<img src="img/circle-user-solid.svg" class="profile-pic-div" alt="User-Profile-Image">';
+                                      }
+                                      else{
+                                      echo '<img src="../photo/' . $photo . '" class="profile-pic-div" alt="User-Profile-Image">'; }}
+                          } ?>
                           <?php echo' <span>' . $_SESSION['username'] . '</span> ';?>
                           <i class="fas fa-angle-down toggle"></i>
                         </a>
                         <ul class="show-notification profile-notification">
                           <li class="">
-                            <a href="#!">
+                            <?php
+                            if($_SESSION['tipe'] == "user"){
+                            ?>
+                            <a href="../profile/dashboard_user.php">
                               <i class="fas fa-user"></i> Lihat Profil
                             </a>
+                            <?php }
+                            else{?>
+                            <a href="../profile/dashboard_vendor.php">
+                              <i class="fas fa-user"></i> Lihat Profil
+                            </a>
+                            <?php }?>
                           </li>
                           <li class="">
-                            <a href="#">
+                            <a href="../faq.php">
                               <i class="fas fa-question"></i> FAQ
                             </a>
                           </li>
                           <li class="">
-                            <a href="../login/logout.php">
+                            <a href="../logout.php">
                               <i class="fas fa-arrow-right-from-bracket"></i> Keluar
                             </a>
                           </li>
@@ -157,8 +166,8 @@ if (isset($_SESSION['username'])){
   <nav class="navbar navbar-expand-lg navbar-light bg-transparent position-fixed w-100">
     <div class="container">
 
-      <a class="navbar-brand" href="#">
-        <img src="../profile/img/venikasvgfix2.svg" alt="" width="30" height="24"
+      <a class="navbar-brand" href="../index.php" style="color: #FF7171;">
+        <img src="../profile/img/venikasvgfix2.svg" alt="" width="30" height="30"
           class="d-inline-block align-text-top" me-3>Venika</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -169,13 +178,13 @@ if (isset($_SESSION['username'])){
 
           <li class="nav-item mx-3">
 
-            <a class="nav-link active" aria-current="page" href="../">Beranda</a>
+            <a class="nav-link active" aria-current="page" href="#">Beranda</a>
           </li>
           <li class="nav-item mx-3">
-            <a class="nav-link" href="../#kategori">Vendor</a>
+            <a class="nav-link" href="katering.php">Vendor</a>
           </li>
           <li class="nav-item mx-3">
-            <a class="nav-link" href="tentang_kami.php">Tentang Kami</a>
+            <a class="nav-link" href="#">Tentang Kami</a>
           </li>
         </ul>
 
@@ -191,14 +200,13 @@ if (isset($_SESSION['username'])){
 <?php
   }
 ?>
-
       <!-- HERO SECTION -->
       <section id="hero">
             <!-- h-100 : height agar memenuhi layar -->
         <div class="container" h-100>
           <div class="row" h-100>
             <div class="col-md-6 hero-tagline my-auto">
-                <img src="img/bg_katering2.jpg" alt="" class="position-absolute end-0 bottom-0 img-hero">
+                <img src="img/katering_bg.jpg" alt="" class="position-absolute end-0 bottom-0 img-hero">
               <h1>Ingin Katering Seperti Apa ?</h1>
               <p>Temukan katering terbaik versi anda disini...</p>
               <button class="btn_cari_sekarang">Cari sekarang...</button>
@@ -244,16 +252,16 @@ if (isset($_SESSION['username'])){
           <div class="col-auto filter_jenis layanan">
             <select name="jenis_layanan" class="form-select" id="inputGroupSelect01">
               <option selected class="option" value="">Jenis Layanan</option>
-              <option class="option" value="Dekorasi">Dekorasi</option>
-              <option class="option" value="Katering">Katering</option>
-              <option class="option" value="Makeup">Makeup</option>
-              <option class="option" value="SoundSystem">Sound System</option>
-              <option class="option" value="MusicBand">Music Band</option>
-              <option class="option" value="Gedung">Gedung</option>
-              <option class="option" value="FotoVideo">Foto & Video</option>
-              <option class="option" value="SewaMobil">Sewa Mobil</option>
-              <option class="option" value="GaunPengantin">Gaun Pengantin</option>
-              <option class="option" value="MC">MC</option>
+              <option class="option" value="dekorasi">Dekorasi</option>
+              <option class="option" value="katering">Katering</option>
+              <option class="option" value="makeup">Makeup</option>
+              <option class="option" value="soundsystem">Sound System</option>
+              <option class="option" value="musicband">Music Band</option>
+              <option class="option" value="gedung">Gedung</option>
+              <option class="option" value="fotoVideo">Foto & Video</option>
+              <option class="option" value="sewaMobil">Sewa Mobil</option>
+              <option class="option" value="gaunpengantin">Gaun Pengantin</option>
+              <option class="option" value="mc">MC</option>
             </select>
           </div>
 
@@ -330,7 +338,7 @@ if (isset($_SESSION['username'])){
                 ?>
                   <div class="col-4">
                       <div class="card" style="width: 22rem;">
-                      <?php echo '<img src="../thumbnail/' . $galeri . '"alt="">' ?>
+                      <?php echo '<img src="../thumbnail/' . $galeri . '"alt="" id="photo">' ?>
                           <div class="card-body">
                               <?php echo '<h4>'. $nama .'</h4>';?>
                               <?php echo '<p> ' . $kecamatan .', Semarang <br>';?>
@@ -354,14 +362,14 @@ if (isset($_SESSION['username'])){
           <h3>Venika</h3>
           <p>Venika adalah platform digital yang menyediakan layanan informasi vendor kebutuhan di daerah Semarang dan sekitarnya.</p>
           <ul class="fast_link">
-            <li>Kontak</li>
-            <li>Vendor</li>
-            <li>Tentang Kami</li>
-            <li>FAQ</li>
+            <a href="../tentang_kami.php #kategori" style="color: #fff;"><li>Kontak</li></a>
+            <a href="../index.php #kategori" style="color: #fff;"><li>Vendor</li></a>
+            <a href="../tentang_kami.php" style="color: #fff;"><li>Tentang Kami</li></a>
+            <a href="../faq.php" style="color: #fff;"><li>FAQ</li></a>
           </ul>
           <ul class="sosmed">
             <li><a href="#"><img src="img/facebook-circle-fill.png"></a></li>
-            <li><a href="#"><img src="img/instagram-fill.png"></a></li>
+            <li><a href="https://www.instagram.com/venika.id/"><img src="img/instagram-fill.png"></a></li>
             <li><a href="#"><img src="img/twitter-fill.png"></a></li>
           </ul>
         </div>

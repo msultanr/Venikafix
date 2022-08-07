@@ -32,11 +32,14 @@ if ($_SESSION['tipe'] != "user"){
 
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/dashboard_vendor2.css">
+    <link rel="stylesheet" href="css/dashboard_vendor1.css">
     <!-- <link rel="stylesheet" href="css/list_vendor.css"> -->
 
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/3709d60cb3.js" crossorigin="anonymous"></script>
+
+    <!-- ICON LOGO WEB -->
+    <link rel="icon" href="../img/icon_venika.png" type="image/x-icon">
 
 
     <title>Venika</title>
@@ -46,10 +49,10 @@ if ($_SESSION['tipe'] != "user"){
 
     <!-- SIDEBAR -->
     <section id="sidebar">
-        <a href="../" class="brand">
-            <i class="fa-brands fa-slack icon"></i>
-            Venika
-        </a>
+    <a href="../index.php" class="brand">
+		<i class="icon"><img src="img/venikasvgfix2.svg" width="30" height="30"class="" alt=""></i>
+			Venika
+		</a>
         <ul class="side-menu">
             <li>
                 <a href="dashboard_user.php" class="nav-link">
@@ -82,11 +85,11 @@ if ($_SESSION['tipe'] != "user"){
 		<div class="ads">
 			<div class="wrapper footer_dashboard_user">
 				<ul class="fast_link_footer">
-					<li>Kontak</li>
-					<li>Vendor</li>
-					<li>Tentang Kami</li>
-					<li>FAQ</li>
-				  </ul>
+                    <a href="../tentang_kami.php?#kategori" style="color: #fff;"><li>Kontak</li></a>
+                    <a href="../#kategori" style="color: #fff;"><li>Vendor</li></a>
+                    <a href="../tentang_kami.php" style="color: #fff;"><li>Tentang Kami</li></a>
+                    <a href="../faq.php" style="color: #fff;"><li>FAQ</li></a>
+				</ul>
 
 				<p>Copyright &copy;2022 Venika | designed by <span>Venika</span></p>
 			</div>
@@ -202,11 +205,11 @@ if ($_SESSION['tipe'] != "user"){
 
                         <div class="col-4">
                             <div class="card">
-                                <?php echo '<img src="../thumbnail/' . $galeri . '" alt="">'; ?>
+                                <?php echo '<img src="../thumbnail/' . $galeri . '" alt="" id="photo">'; ?>
                                 <div class="card-body">
                                     <?php echo '<h4>' . $nama . '</h4>'; ?>
                                     <?php echo '<p>' . $kecamatan . ', Semarang';?> <br> <span class="text-danger"> </span></p>
-                                    <i class="fas fa-heart love"></i>
+                                    <!-- <i class="fas fa-heart love"></i> -->
                                     <?php echo '<a href="../vendor/detail.php?' . $id . '?' . $id_jenis . '" class="stretched-link"></a>'; ?>
                                 </div>
                             </div>

@@ -23,10 +23,13 @@ if ($_SESSION['tipe'] != "vendor"){
 	<!-- <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'> -->
 
 	<!-- CSS -->
-	<link rel="stylesheet" href="css/dashboard_vendor.css">
+	<link rel="stylesheet" href="css/dashboard_vendor1.css">
 
 	<!-- Font Awesome -->
 	<script src="https://kit.fontawesome.com/3709d60cb3.js" crossorigin="anonymous"></script>
+
+	<!-- ICON LOGO WEB -->
+    <link rel="icon" href="../img/icon_venika.png" type="image/x-icon">
 
 	<!-- TinyMCE -->
 	<script src="tinymce/js/tinymce/tinymce.min.js"></script>
@@ -121,8 +124,8 @@ if ($_SESSION['tipe'] != "vendor"){
 
 	<!-- SIDEBAR -->
 	<section id="sidebar">
-		<a href="../" class="brand">
-			<i class="fa-brands fa-slack icon"></i>
+		<a href="../index.php" class="brand">
+		    <i class="icon"><img src="img/venikasvgfix2.svg" width="30" height="30" class="" alt=""></i>
 			Venika
 		</a>
 		<ul class="side-menu">
@@ -172,6 +175,20 @@ if ($_SESSION['tipe'] != "vendor"){
 				</a>
 			</li>
 		</ul>
+
+		 <!-- Footer -->
+		 <div class="ads">
+			<div class="wrapper">
+				<ul class="fast_link">
+                    <a href="../tentang_kami.php?#kategori" style="color: #fff;"><li>Kontak</li></a>
+                    <a href="../#kategori" style="color: #fff;"><li>Vendor</li></a>
+                    <a href="../tentang_kami.php" style="color: #fff;"><li>Tentang Kami</li></a>
+                    <a href="../faq.php" style="color: #fff;"><li>FAQ</li></a>
+				</ul>
+
+				<p>Copyright &copy;2022 Venika | designed by <span>Venika</span></p>
+			</div>
+		</div>
 	</section>
 
 	<!-- NAVBAR -->
@@ -317,16 +334,16 @@ if ($_SESSION['tipe'] != "vendor"){
 								<label for="">Jenis Layanan</label>
 								<select name="jenis_layanan" class="form-select" aria-label="Default select example">
 									<option value="">Pilih Jenis Layanan</option>
-									<option value="Dekorasi">Dekorasi</option>
-									<option value="FotoVideo">Foto & Video</option>
-									<option value="GaunPengantin">Gaun Pengantin</option>
-									<option value="Gedung">Gedung</option>
-									<option value="Katering">Katering</option>
-									<option value="Makeup">Makeup</option>
-									<option value="MC">MC</option>
-									<option value="MusicBand">Music Band</option>
-									<option value="SewaMobil">Sewa Mobil</option>
-									<option value="SoundSystem">Sound System</option>
+									<option value="dekorasi">Dekorasi</option>
+									<option value="fotovideo">Foto & Video</option>
+									<option value="gaunpengantin">Gaun Pengantin</option>
+									<option value="gedung">Gedung</option>
+									<option value="katering">Katering</option>
+									<option value="makeup">Makeup</option>
+									<option value="mc">MC</option>
+									<option value="musicband">Music Band</option>
+									<option value="sewamobil">Sewa Mobil</option>
+									<option value="soundsystem">Sound System</option>
 								</select>
 							</div>
 							<div class="inputBox">
