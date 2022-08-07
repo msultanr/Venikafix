@@ -6,7 +6,7 @@ include '../database/connection.php';
 $id = $_SESSION['id'];
 
 if (!isset($_SESSION['is_login'])) {
-    echo "<script>document.location.href='../login_vendor.php';</script>";
+    echo "<script>document.location.href='../login.php';</script>";
     die();
 }
 
@@ -23,13 +23,10 @@ if ($_SESSION['tipe'] != "user"){
     <!-- <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'> -->
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/dashboard_vendor1.css">
+    <link rel="stylesheet" href="css/dashboard_vendor.css">
 
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/3709d60cb3.js" crossorigin="anonymous"></script>
-
-	<!-- ICON LOGO WEB -->
-    <link rel="icon" href="../img/icon_venika.png" type="image/x-icon">
 
     <title>Venika</title>
 </head>
@@ -37,7 +34,7 @@ if ($_SESSION['tipe'] != "user"){
 
     <!-- SIDEBAR -->
     <section id="sidebar">
-	<a href="../index.php" class="brand">
+    <a href="../index.php" class="brand">
 		<i class="icon"><img src="img/venikasvgfix2.svg" width="30" height="30"class="" alt=""></i>
 			Venika
 		</a>
@@ -69,10 +66,10 @@ if ($_SESSION['tipe'] != "user"){
             </li>
         </ul>
 
-         <!-- Footer -->
+        <!-- Footer -->
 		<div class="ads">
-			<div class="wrapper">
-				<ul class="fast_link">
+			<div class="wrapper footer_dashboard_user">
+				<ul class="fast_link_footer">
                     <a href="../tentang_kami.php?#kategori" style="color: #fff;"><li>Kontak</li></a>
                     <a href="../#kategori" style="color: #fff;"><li>Vendor</li></a>
                     <a href="../tentang_kami.php" style="color: #fff;"><li>Tentang Kami</li></a>
@@ -82,6 +79,7 @@ if ($_SESSION['tipe'] != "user"){
 				<p>Copyright &copy;2022 Venika | designed by <span>Venika</span></p>
 			</div>
 		</div>
+    </section>
 
 
         <!-- NAVBAR -->
@@ -120,8 +118,8 @@ if ($_SESSION['tipe'] != "user"){
                                                         <i class="fa-solid fa-angle-down"></i>
                                                     </a>
                                                     <ul class="show-notification profile-notification">
-                                                        <li class="">
-                                                            <a href="#!">
+                                                        <li class="dashboard_user.php">
+                                                            <a href="">
                                                                 <i class="fas fa-user"></i> Lihat Profil
                                                             </a>
                                                         </li>
