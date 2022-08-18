@@ -314,19 +314,17 @@ if (isset($_SESSION['username'])){
             </form>
             <?php } }?>
 
-            <!-- <div class = "product-rating">
+            <!-- REVISI START -->
+            <div class = "product-rating" data-bs-toggle="modal" data-bs-target="#lihatRating">
                 <i class = "fas fa-star"></i>
                 <i class = "fas fa-star"></i>
                 <i class = "fas fa-star"></i>
                 <i class = "fas fa-star"></i>
                 <i class = "fas fa-star-half-alt"></i>
-                <span>4.7(21)</span>
-              </div> -->
+                <span>4.7 <span>(21)</span></span>
+              </div>
 
-            <!-- <div class = "product-price">
-                <p class = "last-price">Old Price: <span>$257.00</span></p>
-                <p class = "new-price">New Price: <span>$249.00 (5%)</span></p>
-              </div> -->
+              <!-- REVISI END -->
 
 		
             <nav>
@@ -432,6 +430,57 @@ if (isset($_SESSION['username'])){
                 </a>
               </div> -->
         </div>
+
+        <!-- REVISI RATING DETAIL START -->
+        <!-- FORM MODAL -->
+			<div class="modal fade" id="lihatRating" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLabel">PENILAIAN</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body">
+							<form class="needs-validation" action="update_status.php" method="POST">
+								<div class="mb-3">
+									<!-- <label for="recipient-name" class="col-form-label">Penilaian</label> -->
+                  <div id="rating-user">
+                    <div class="detail-rating">
+                      <label for="" class="rating-name" style="margin-bottom: 8px; font-weight: 600;">Asiyya</label>
+                      <div class = "product-rating" style="margin-bottom: 8px";>
+                        <i class = "fas fa-star"></i>
+                        <i class = "fas fa-star"></i>
+                        <i class = "fas fa-star"></i>
+                        <i class = "fas fa-star"></i>
+                        <i class = "fas fa-star-half-alt"></i>
+                      </div>
+                      <p style="text-align: justify;">Pelayanan Profesional, Produk lengkap, Memuaskan...</p>
+                    </div>
+                  </div>
+                  <div id="rating-user">
+                    <div class="detail-rating">
+                      <label for="" class="rating-name" style="margin-bottom: 8px; font-weight: 600;">Sultan</label>
+                      <div class = "product-rating" style="margin-bottom: 8px";>
+                        <i class = "fas fa-star"></i>
+                        <i class = "fas fa-star"></i>
+                        <i class = "fas fa-star"></i>
+                        <i class = "fas fa-star"></i>
+                        <i class = "fas fa-star-half-alt"></i>
+                      </div>
+                      <p style="text-align: justify;">Pelayanan Profesional, Produk lengkap, Memuaskan...</p>
+                    </div>
+                  </div>
+								</div>
+
+
+						</div>
+
+					</div>
+					</form>
+				</div>
+			</div>
+
+      <!-- REVISI RATING DETAIL END -->
     </section>
 
     <!-- Form Pemesanan -->

@@ -285,7 +285,31 @@
     font-weight: 600;
   }
   
-  
+
+ /* REVISI START */
+ .product-rating {
+  cursor: pointer;
+}
+.product-rating i {
+  color: #ffd000;
+  bottom: 30px;
+  font-size: 16px;
+}
+
+#rating-user {
+border: 0.02px solid #dddddd;
+margin-top: 10px;
+}
+
+.detail-rating {
+color: #000;
+font-size: 15px;
+margin: 20px;
+}
+
+/* REVISI END */
+
+
   /* Detail vendor */
   #detail {
     background-color: #F5F5F5;
