@@ -39,8 +39,6 @@
                         placeholder="Password">
                     </div>
 
-                    <p class="lupa_pass">Lupa Password ?</p>
-
                     <input type="submit" name="login" value="login" class="btn solid">
                 </form>
 
@@ -106,7 +104,7 @@
                     <div class="content">
                         <h3>Belum Punya Akun ?</h3>
                         <p>Daftar, dan promosikan bisnis vendor anda sekarang...</p>
-                     <button class="btn transparent" id="sign-up-btn">Register</button>
+                     <button class="btn transparent" id="sign-up-btn" style="width:150px;">Register Vendor</button>
 
                      <p>
                          Login sebagai User ?

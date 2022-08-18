@@ -190,23 +190,12 @@ if (isset($_SESSION['username'])){
             <form class="edit_foto" enctype="multipart/form-data" method="POST">
                 <h3 class="head_profile">Pilih Foto Profil</h3>
             <div class="profile-pic-div" >
-            <?php
-                // $id = $user["id"];
-                // $nama = $user["nama"];
-                // $email = $user["email"];
-                // $no_hp = $user["no_hp"];
-                // $username = $user["username"];
-                // $password = $user["password"];
-                // $photo = $user["photo"];
-            ?>
                 <?php
                 if ($photo == NULL){
-                echo '<img src="img/circle-user-solid.svg" class="profile-pic-div"
-                                                            alt="User-Profile-Image">';
+                echo '<img src="img/circle-user-solid.svg" id="photo">';
                 }
                 else{
-                echo '<img src="../photo/' . $photo . '" class="profile-pic-div"
-                                                            alt="User-Profile-Image">'; }?>
+                echo '<img src="../photo/' . $photo . '" id="photo">'; }?>
                 <input type="file" id="file" accept="image/*" id="photo" name="NamaFile">
                 <label for="file" id="uploadBtn">
                     <i class="fa-solid fa-camera icon_btn"></i> <br>

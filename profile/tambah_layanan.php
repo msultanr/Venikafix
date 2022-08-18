@@ -63,8 +63,9 @@ if (isset($_POST['tambah'])) {
 				echo "<script>alert('ERROR!');</script>";
 				echo "<script>document.location.href='kategori_layanan_vendor.php';</script>";
 				}
-			}
+			} 
 				}
+			
 			}
 		}
 else{

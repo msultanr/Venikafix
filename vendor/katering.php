@@ -284,6 +284,25 @@ if (isset($_SESSION['username'])){
               <option class="option" value="SemarangUtara">Semarang Utara</option>
               <option class="option" value="Tembalang">Tembalang</option>
               <option class="option" value="Tugu">Tugu</option>
+<option class="option" value="Ambarawa">Ambarawa</option>
+<option class="option" value="Bancak">Bancak</option>
+<option class="option" value="Bandungan">Bandungan</option>
+<option class="option" value="Banyubiru">Banyubiru</option>
+<option class="option" value="Bawen">Bawen</option>
+<option class="option" value="Bergas">Bergas</option>
+<option class="option" value="Bringin">Bringin</option>
+<option class="option" value="Getasan">Getasan</option>
+<option class="option" value="Jambu">Jambu</option>
+<option class="option" value="Kaliwungu">Kaliwungu</option>
+<option class="option" value="Pabelan">Pabelan</option>
+<option class="option" value="Pringapus">Pringapus</option>
+<option class="option" value="Suruh">Suruh</option>
+<option class="option" value="Susukan">Susukan</option>
+<option class="option" value="Sumowono">Sumowono</option>
+<option class="option" value="Tengaran">Tengaran</option>
+<option class="option" value="Tuntang">Tuntang</option>
+<option class="option" value="UngaranBarat">Ungaran Barat</option>
+<option class="option" value="UngaranTimur">Ungaran Timur</option>
             </select>
           </div>
 
@@ -298,6 +317,7 @@ if (isset($_SESSION['username'])){
               <option class="option" value="Jawa">Jawa</option>
               <option class="option" value="Melayu">Melayu</option>
               <option class="option" value="Sunda">Sunda</option>
+<option class="option" value="Nusantara">Nusantara</option>
             </select>
           </div>
 
@@ -335,6 +355,7 @@ if (isset($_SESSION['username'])){
                   $adat = $cek["adat"];
                   $galeri = $cek["galeri"];
                   $id_jenis = $cek["id_jenis"];
+$kecamatan = preg_replace('/(?<!\ )[A-Z]/', ' $0', $kecamatan);
                 ?>
                   <div class="col-4">
                       <div class="card" style="width: 22rem;">

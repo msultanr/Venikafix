@@ -4,7 +4,6 @@ session_start();
 include '../database/connection.php';
 
 $id = $_SESSION['id'];
-echo $id;
 
 if (!isset($_SESSION['is_login'])) {
     echo "<script>document.location.href='../login_vendor.php';</script>";
@@ -251,7 +250,7 @@ $user = $_SESSION['username'];
 								<td>
 									<!-- <img src="img/people.png"> -->
 									<?php
-								echo "<p name='id_booking' value=" . $id_booking .">" . $id_booking ."</p>";
+								
 								echo "<p name='nama' value=" . $nama .">" . $nama ."</p>";
 								echo "</td>";
 								echo "<td name='no_hp' value=" . $no_hp .">" . $no_hp . "</td>";
@@ -267,6 +266,9 @@ $user = $_SESSION['username'];
 									case "2":
 										echo '<span class="status selesai">Selesai</span>';
 										break;
+									//case "3":
+										//echo '<span class="status ditolak">Ditolak</span>';
+										//break;
 								}
 								echo '</td>';
 								echo '<input type="hidden" name="id_booking" value=' . $id_booking . ' class="btn solid">';

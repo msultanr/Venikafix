@@ -12,8 +12,13 @@ if (!isset($_SESSION['is_login'])) {
     $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
     $id = parse_url($actual_link, PHP_URL_QUERY);
     $_GET['id'] = $id;
-    $id_vendor = substr($id, 0, 1);
-    $id_jenis = substr($id, 2);
+    $param = explode("?", $id);
+    $id_vendor = $param[0];
+    $id_jenis = $param[1];
+
+    if($_SESSION['id'] != $id_vendor){
+	echo "<script>document.location.href='dashboard_vendor.php';</script>";
+}
 
     $sql = mysqli_query($koneksi,
     "SELECT * FROM vendor, jenis_layanan
@@ -28,6 +33,7 @@ if (!isset($_SESSION['is_login'])) {
     $twitter = $cek['twitter'];
     $instagram = $cek['instagram'];
     $website = $cek['website'];
+    $nama = $cek['nama_layanan'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -149,10 +155,10 @@ if (!isset($_SESSION['is_login'])) {
 
     <!-- SIDEBAR -->
     <section id="sidebar">
-        <a href="../" class="brand">
-            <i class="fa-brands fa-slack icon"></i>
-            Venika
-        </a>
+        <a href="../index.php" class="brand">
+			<i class="icon"><img src="img/venikasvgfix2.svg" width="30" height="30" class="" alt=""></i>
+			Venika
+		</a>
         <ul class="side-menu">
             <li>
                 <a href="dashboard_vendor.php" class="nav-link">
@@ -305,7 +311,7 @@ if (!isset($_SESSION['is_login'])) {
                         </li>
                         <li><i class="fa-solid fa-angle-right"></i></li>
                         <li>
-                            <a class="active" href="data_vendor.php">Katering</a>
+                            <?php echo '<a class="active" href="data_vendor.php?' . $id_vendor . '?' . $id_jenis . '">' . $nama . '</a>'; ?>
                         </li>
                     </ul>
                 </div>

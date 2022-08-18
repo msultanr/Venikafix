@@ -31,7 +31,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Style CSS -->
-    <link rel="stylesheet" href="css/katering.css">
+    <link rel="stylesheet" href="vendor/css/list_vendor.css">
+ 
     <link rel="stylesheet" href="css/style_nav_login.css">
 
     <!-- Style Responsive -->
@@ -263,10 +264,11 @@ if (isset($_SESSION['username'])){
                     $id = $cek["id"];
                     $galeri = $cek["galeri"];
                     $id_jenis = $cek["id_jenis"];
+$kecamatan = preg_replace('/(?<!\ )[A-Z]/', ' $0', $kecamatan);
                 ?>
 			  	  <div class="col-4">
 					    <div class="card" style="width: 22rem;">
-              <?php echo '<img src="thumbnail/' . $galeri . '"alt="">' ?>
+              <?php echo '<img src="thumbnail/' . $galeri . '"alt="" id="photo">' ?>
 						    <div class="card-body">
 						    <?php echo'<h4> ' . $nama . '</h4>';?>
 						    <?php echo '<p> ' . $kecamatan .', Semarang <br>';?>

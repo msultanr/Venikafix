@@ -135,9 +135,9 @@ $id = $_SESSION['id'];
 			</div>
 
 				<ul class="profile-link">
-					<li><a href="#"><i class="fas fa-user"></i> Lihat Profil</a></li>
-					<li><a href="#"><i class="fas fa-question"></i> FAQ</a></li>
-					<li><a href="#"><i class="fas fa-arrow-right-from-bracket"></i> Keluar</a></li>
+					<li><a href="dashboard_vendor.php"><i class="fas fa-user"></i> Lihat Profil</a></li>
+					<li><a href="../faq.php"><i class="fas fa-question"></i> FAQ</a></li>
+					<li><a href="../logout.php"><i class="fas fa-arrow-right-from-bracket"></i> Keluar</a></li>
 				</ul>
 			</div>
 		</nav> -->
@@ -251,7 +251,7 @@ $id = $_SESSION['id'];
 				</li>
 				<?php
 				$sql = mysqli_query($koneksi,
-				"SELECT COUNT(id) AS jumlah2 FROM booking where id_vendor = '$id'");
+				"SELECT COUNT(id) AS jumlah2 FROM booking where id_vendor = '$id' and (status = '1' or status = '2')");
 				$cek = mysqli_fetch_assoc($sql);
 				?>
 				<li>

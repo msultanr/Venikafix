@@ -35,8 +35,6 @@
                         placeholder="Password">
                     </div>
 
-                    <p class="lupa_pass">Lupa Password ?</p>
-
                     <input type="submit" name="login" value="login" class="btn solid">
 
                 </form>
@@ -74,7 +72,7 @@
                     <div class="content">
                         <h3>Belum Punya Akun ?</h3>
                         <p>Cari kebutuhan pernikahan lebih mudah dan cepat dengan venika</p>
-                     <button class="btn transparent" id="sign-up-btn">Register</button>
+                     <button class="btn transparent" id="sign-up-btn">Register User</button>
 
                      <p>
                          Login Sebagai Vendor ?

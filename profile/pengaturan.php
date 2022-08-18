@@ -144,12 +144,12 @@ if ($_SESSION['tipe'] != "vendor"){
                                                     </a>
                                                     <ul class="show-notification profile-notification">
                                                         <li class="">
-                                                            <a href="#!">
+                                                            <a href="dashboard_vendor.php">
                                                                 <i class="fas fa-user"></i> Lihat Profil
                                                             </a>
                                                         </li>
                                                         <li class="">
-                                                            <a href="#">
+                                                            <a href="../faq.php">
                                                                 <i class="fas fa-question"></i> FAQ
                                                             </a>
                                                         </li>
@@ -281,18 +281,13 @@ if ($_SESSION['tipe'] != "vendor"){
                                 <?php echo '<input type="text" name="email" placeholder="" value="' . $email . '"  id="validationDefault01" required>'; ?>
                             </div>
                             <div class="inputBox">
-								<label for="">Tentang Vendor</label>
-								<?php echo '<textarea name="deskripsi" value="" placeholder="Jelaskan Detail Tentang Vendor Anda..." id="" cols="30" rows="10">' . $deskripsi .'</textarea>'; ?>
-								<div style="margin-top: -20px;">* Maksimal 500 Karakter</div>
-							</div>
-
+				<label for="validationCustom01">Nomor Telephone</label>
+				<?php echo '<input type="text" name="no_hp" placeholder="Nomor Telephone Kosong" value="' . $no_hp . '" id="validationDefault02" required>'; ?>
+			    </div>
 
                         </div>
                         <div class="box">
-                            <div class="inputBox">
-                                <label for="validationCustom02">Nomor Telephone</label>
-                                <?php echo '<input type="text" name="no_hp" placeholder="Nomor Telephone Kosong" value="' . $no_hp .'" id="validationDefault02" required>'; ?>
-                            </div>
+                          
                             <div class="inputBox">
                                 <label for="validationCustom02">Alamat</label>
                                 <?php echo '<input type="text" name="alamat" placeholder="Alamat Kosong" value="' . $alamat . '" id="validationDefault02" required>'; ?>
@@ -316,6 +311,25 @@ if ($_SESSION['tipe'] != "vendor"){
                                 <option class="option" value="Semarang Utara">Semarang Utara</option>
                                 <option class="option" value="Tembalang">Tembalang</option>
                                 <option class="option" value="Tugu">Tugu</option>
+<option class="option" value="Ambarawa">Ambarawa</option>
+<option class="option" value="Bancak">Bancak</option>
+<option class="option" value="Bandungan">Bandungan</option>
+<option class="option" value="Banyubiru">Banyubiru</option>
+<option class="option" value="Bawen">Bawen</option>
+<option class="option" value="Bergas">Bergas</option>
+<option class="option" value="Bringin">Bringin</option>
+<option class="option" value="Getasan">Getasan</option>
+<option class="option" value="Jambu">Jambu</option>
+<option class="option" value="Kaliwungu">Kaliwungu</option>
+<option class="option" value="Pabelan">Pabelan</option>
+<option class="option" value="Pringapus">Pringapus</option>
+<option class="option" value="Suruh">Suruh</option>
+<option class="option" value="Susukan">Susukan</option>
+<option class="option" value="Sumowono">Sumowono</option>
+<option class="option" value="Tengaran">Tengaran</option>
+<option class="option" value="Tuntang">Tuntang</option>
+<option class="option" value="UngaranBarat">Ungaran Barat</option>
+<option class="option" value="UngaranTimur">Ungaran Timur</option>
                                 </select>
                             </div>
                             <div class="inputBox">

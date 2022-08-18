@@ -7,9 +7,9 @@ session_start();
     $id = parse_url($actual_link, PHP_URL_QUERY);
     $id_user = $_SESSION['id'];
     $_GET['id'] = $id;
-    $id_vendor = substr($id,0,1);
-    $id_jenis = substr($id,2);
-
+    $param = explode("?", $id);
+    $id_vendor = $param[0];
+    $id_jenis = $param[1];
 
     $sql = mysqli_query($koneksi,
     "SELECT * FROM vendor, jenis_layanan WHERE vendor.id = jenis_layanan.id_vendor
@@ -23,8 +23,6 @@ session_start();
     $variasi = $cek["variasi"];
     $no_hp = $cek["no_hp"];
     $instagram = $cek["instagram"];
-    $facebook = $cek["facebook"];
-    $twitter = $cek["twitter"];
     $website = $cek["website"];
     $photo = $cek["photo"];
 
@@ -284,9 +282,15 @@ if (isset($_SESSION['username'])){
     <!-- Detail Vendor -->
 
     <section class="detail" id="detail">
+	<?php if($_SESSION['tipe'] == 'vendor'){
+	echo '<h2 class="product-title" style="margin-top: 50px;">Detail Layanan ' . $nama_layanan . '</h2>'; ?>
         <div class="product-content">
-            <?php echo '<h2 class="product-title">Detail Layanan ' . $nama_layanan . '</h2>' ?>
+            <?php }
+	else{ ?>
+		<div class="product-content">
+		<?php echo '<h2 class="product-title" style="margin-top: 50px;">Detail Layanan ' . $nama_layanan . '</h2>'; }?>
             <?php
+	    if($_SESSION['tipe'] == 'user'){
             $sql = mysqli_query($koneksi,
             "SELECT * FROM favorit where id_vendor ='$id_vendor' and id_jenis ='$id_jenis' and id_user='$id_user'");
             if(mysqli_num_rows($sql) > 0){
@@ -308,7 +312,7 @@ if (isset($_SESSION['username'])){
               <!-- <button type="submit" name="submit" class="btn_plus fa-solid fa-heart"> Favorit</button> <br> -->
             <button type="submit" name="submit" class="btn_plus"><i class="fa-solid fa-heart"></i> Favorit</button></a> <br>
             </form>
-            <?php } ?>
+            <?php } }?>
 
             <!-- <div class = "product-rating">
                 <i class = "fas fa-star"></i>
@@ -324,9 +328,13 @@ if (isset($_SESSION['username'])){
                 <p class = "new-price">New Price: <span>$249.00 (5%)</span></p>
               </div> -->
 
+		
             <nav>
-                <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
+		<?php if($_SESSION['tipe'] == 'vendor'){ ?>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist" style="margin-top: 150px;">
+                    <?php }
+			else { echo '<div class="nav nav-tabs" id="nav-tab" role="tablist">'; } ?>
+			<button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
                         type="button" role="tab" aria-controls="nav-home" aria-selected="true">Tentang Vendor</button>
                     <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
                         type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Fasilitas</button>
@@ -356,11 +364,9 @@ if (isset($_SESSION['username'])){
                 <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
                     <h2>Kontak</h2>
                 <ul>
-                    <li>No. HP : <a href="#" class="product-link"><?php echo $no_hp; ?></a></li>
-                    <li>Instagram : <a href="#" class="product-link"><?php echo $instagram; ?></a></li>
-                    <li>Facebook : <a href="#" class="product-link"><?php echo $facebook; ?></a></li>
-                    <li>Twitter : <a href="#" class="product-link"><?php echo $twitter; ?></a></li>
-                    <li>Website : <a href="#" class="product-link"><?php echo $website; ?></a></li>
+                    <?php echo '<li>No. HP : <a href="https://wa.me/+62' . $no_hp . '" target="_blank" class="product-link">' . $no_hp . '</a></li>';
+                    echo '<li>Instagram : <a href="https://instagram.com/' . $instagram . '" target="_blank"  class="product-link"> ' . $instagram . '</a></li>';
+                     echo '<li>Website : <a href="https://' . $website . '" target="_blank" class="product-link">' . $website . '</a></li>'; ?>
                 </ul>
                 </div>
             </div>
@@ -458,7 +464,7 @@ if (isset($_SESSION['username'])){
                         <input type="date" name="tanggal" id="validationDefault03" required>
                     </div>
                     <div class="inputBox">
-                        <?php echo '<input type="hidden" name="id" value="' . $_GET['id'] . '">'; ?>
+                        <?php echo '<input type="hidden" name="id" value="' . $id_vendor . '">'; ?>
                     </div>
                     <!-- <div class="inputBox">
                         <label for="">Alamat</label>

@@ -44,7 +44,7 @@
 				}
 			else{
 					// beri pesan dan dialihkan ke halaman login
-					echo "error";
+					echo "<script>alert('GAGAL BOOKING!');</script>";
 					echo "<script>document.location.href='../';</script>";
 				}
         }

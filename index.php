@@ -214,7 +214,7 @@ if (isset($_SESSION['username'])){
         <div class="col-md-6 hero-tagline my-auto">
           <h1>Membantu anda mendapatkan vendor terbaik !</h1>
           <p>Mencari vendor pernikahan kini lebih mudah melalui <span class="fw-bold">Venika</span></p>
-          <button class="btn_cari_sekarang">Cari sekarang...</button>
+         <a href="#search"><button class="btn_cari_sekarang">Cari sekarang...</button></a>
         </div>
       </div>
       <img src="img/hero2.png" alt="" class="position-absolute end-0 bottom-0 img-hero">
@@ -286,10 +286,29 @@ if (isset($_SESSION['username'])){
               <option class="option" value="Pedurungan">Pedurungan</option>
               <option class="option" value="SemarangBarat">Semarang Barat</option>
               <option class="option" value="SemarangSelatan">Semarang Selatan</option>
-              <option class="option" value="Semarang Tengah">Semarang Tengah</option>
+              <option class="option" value="SemarangTengah">Semarang Tengah</option>
               <option class="option" value="SemarangUtara">Semarang Utara</option>
               <option class="option" value="Tembalang">Tembalang</option>
               <option class="option" value="Tugu">Tugu</option>
+	      <option class="option" value="Ambarawa">Ambarawa</option>
+	      <option class="option" value="Bancak">Bancak</option>
+	      <option class="option" value="Bandungan">Bandungan</option>
+	      <option class="option" value="Banyubiru">Banyubiru</option>
+	      <option class="option" value="Bawen">Bawen</option>
+	      <option class="option" value="Bergas">Bergas</option>
+	      <option class="option" value="Bringin">Bringin</option>
+	      <option class="option" value="Getasan">Getasan</option>
+	      <option class="option" value="Jambu">Jambu</option>
+<option class="option" value="Kaliwungu">Kaliwungu</option>
+<option class="option" value="Pabelan">Pabelan</option>
+<option class="option" value="Pringapus">Pringapus</option>
+<option class="option" value="Suruh">Suruh</option>
+<option class="option" value="Susukan">Susukan</option>
+<option class="option" value="Sumowono">Sumowono</option>
+<option class="option" value="Tengaran">Tengaran</option>
+<option class="option" value="Tuntang">Tuntang</option>
+<option class="option" value="UngaranBarat">Ungaran Barat</option>
+<option class="option" value="UngaranTimur">Ungaran Timur</option>
             </select>
           </div>
 
@@ -304,6 +323,7 @@ if (isset($_SESSION['username'])){
               <option class="option" value="Jawa">Jawa</option>
               <option class="option" value="Melayu">Melayu</option>
               <option class="option" value="Sunda">Sunda</option>
+<option class="option" value="Nusantara">Nusantara</option>
             </select>
           </div>
 
@@ -477,8 +497,8 @@ if (isset($_SESSION['username'])){
 
             <div class="card-content">
               <h3 class="name">Muhammad Sultan Rafi</h3>
-              <p class="description">The lorem text the section that contains header with having open functionality.
-                Lorem dolor sit amet consectetur adipisicing elit.</p>
+              <p class="description">Venika menampilkan vendor-vendor yang menyediakan layanan untuk pernikahan,
+			sehingga saya tidak repot mencari secara satu persatu. Terimakasih Venika!</p>
 
               <!-- <button class="button">View More</button> -->
             </div>
@@ -495,8 +515,8 @@ if (isset($_SESSION['username'])){
 
             <div class="card-content">
               <h3 class="name">Rosma Khoirul Asiyya</h3>
-              <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis repellendus
-                ducimus id dicta! Nemo delectus neque accusantium autem saepe enim!</p>
+              <p class="description">Venika membantu saya dalam mencari vendor yang menyediakan layanan
+		pernikahan, Terimakasih Venika!</p>
 
               <!-- <button class="button">View More</button> -->
             </div>

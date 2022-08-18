@@ -28,6 +28,9 @@ if ($_SESSION['tipe'] != "user"){
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/3709d60cb3.js" crossorigin="anonymous"></script>
 
+    <!-- ICON LOGO WEB -->
+    <link rel="icon" href="../img/icon_venika.png" type="image/x-icon">
+
     <title>Venika</title>
 </head>
 <body>
@@ -182,47 +185,13 @@ if ($_SESSION['tipe'] != "user"){
 								<th>Layanan</th>
 								<th>Produk/Jasa</th>
 								<th>Status</th>
-								<th>Catatan</th>
+								
 							</tr>
 						</thead>
 						<tbody>
 							<?php
 							$sql = mysqli_query($koneksi,
 							"SELECT * FROM booking WHERE id_user = '$id' AND status = '0'");
-							while ($cek = mysqli_fetch_assoc($sql)){
-							$nama = $cek['nama'];
-							$no_hp = $cek['no_hp'];
-							$tanggal = $cek['tanggal'];
-							$jenis_layanan = $cek['jenis_layanan'];
-							$paket = $cek['paket'];
-							$status = $cek['status'];
-
-
-							?>
-							<tr>
-								<td>
-									<?php echo '<p>' . $nama . '</p>'; ?>
-								</td>
-								<?php echo '<td>' . $no_hp . '</td>';
-								echo '<td>' . $tanggal . '</td>';
-								echo '<td>' . $tanggal . '</td>';
-								echo '<td>' . $paket . '</td>'; ?>
-								<td>
-									<?php
-									switch($status){
-										case "0":
-											echo '<span class="status pending">Pending</span>';
-											break;
-										case "3":
-											echo '<span class="status ditolak">Ditolak</span>';
-											break;
-									} ?>
-								</td>
-							</tr>
-							<?php } ?>
-							<?php
-							$sql = mysqli_query($koneksi,
-							"SELECT * FROM booking, note WHERE id_user = '$id' AND booking.id = note.id_booking AND status = '3'");
 							while ($cek = mysqli_fetch_assoc($sql)){
 							$nama = $cek['nama'];
 							$no_hp = $cek['no_hp'];
@@ -240,7 +209,7 @@ if ($_SESSION['tipe'] != "user"){
 								</td>
 								<?php echo '<td>' . $no_hp . '</td>';
 								echo '<td>' . $tanggal . '</td>';
-								echo '<td>' . $tanggal . '</td>';
+								echo '<td>' . $jenis_layanan . '</td>';
 								echo '<td>' . $paket . '</td>'; ?>
 								<td>
 									<?php
@@ -248,12 +217,9 @@ if ($_SESSION['tipe'] != "user"){
 										case "0":
 											echo '<span class="status pending">Pending</span>';
 											break;
-										case "3":
-											echo '<span class="status ditolak">Ditolak</span>';
-											break;
 									} ?>
 								</td>
-								<?php echo '<td>' . $note . '<td>'; ?>
+								<?php echo '<td>' . $note . '</td>'; ?>
 							</tr>
 							<?php } ?>
 						</tbody>
@@ -277,12 +243,13 @@ if ($_SESSION['tipe'] != "user"){
 								<th>Layanan</th>
 								<th>Produk/Jasa</th>
 								<th>Status</th>
+								<th>Catatan</th>
 							</tr>
 						</thead>
 						<tbody>
 							<?php
 							$sql = mysqli_query($koneksi,
-							"SELECT * FROM booking where id = '$id' AND status = '1' or status = '2'");
+							"SELECT * FROM booking,note WHERE id_user = '$id' AND booking.id = note.id_booking AND (status = '1' or status = '2' or status = '3')");
 							while ($cek = mysqli_fetch_assoc($sql)){
 								$nama = $cek['nama'];
 								$no_hp = $cek['no_hp'];
@@ -290,6 +257,7 @@ if ($_SESSION['tipe'] != "user"){
 								$jenis_layanan = $cek['jenis_layanan'];
 								$paket = $cek['paket'];
 								$status = $cek['status'];
+								$note = $cek['note'];
 
 
 
@@ -300,7 +268,7 @@ if ($_SESSION['tipe'] != "user"){
 									</td>
 									<?php echo '<td>' . $no_hp . '</td>';
 									echo '<td>' . $tanggal . '</td>';
-									echo '<td>' . $tanggal . '</td>';
+									echo '<td>' . $jenis_layanan . '</td>';
 									echo '<td>' . $paket . '</td>'; ?>
 									<td>
 										<?php
@@ -311,11 +279,14 @@ if ($_SESSION['tipe'] != "user"){
 											case "2":
 												echo '<span class="status selesai">Completed</span>';
 												break;
+											case "3":
+												echo '<span class="status ditolak">Ditolak</span>';
+												break;
 										} ?>
 									</td>
-									<!-- <td>
-										Akan di roses
-									</td> -->
+									<td>
+										<?php echo $note; ?>
+									</td>
 								</tr>
 								<?php } ?>
 						</tbody>

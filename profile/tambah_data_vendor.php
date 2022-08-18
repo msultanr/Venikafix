@@ -363,7 +363,7 @@ if ($_SESSION['tipe'] != "vendor"){
 							</div>
 
 							<div class="inputBox">
-								<label for="">Adat (Khusus kategori Katering, Makeup, Gaun Pengantin)</label>
+								<label for="">Adat</label>
 								<select name="adat" class="form-select" id="inputGroupSelect01">
 									<option selected class="option" value="">Adat</option>
 									<option class="option" value="Bali">Bali</option>
@@ -373,6 +373,7 @@ if ($_SESSION['tipe'] != "vendor"){
 									<option class="option" value="Jawa">Jawa</option>
 									<option class="option" value="Melayu">Melayu</option>
 									<option class="option" value="Sunda">Sunda</option>
+									<option class="option" value="Nusantara">Nusantara</option>
 								</select>
 							</div>
 							<div class="mb-3 inputBox">

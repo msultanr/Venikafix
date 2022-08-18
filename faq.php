@@ -116,7 +116,7 @@ if (isset($_SESSION['username'])){
                             </a>
                             <?php }
                             else{?>
-                            <a href="dashboard_vendor.php">
+                            <a href="profile/dashboard_vendor.php">
                               <i class="fas fa-user"></i> Lihat Profil
                             </a>
                             <?php }?>
@@ -224,12 +224,16 @@ if (isset($_SESSION['username'])){
                         <div class="accordion-item">
                           <h2 class="accordion-header space" id="headingOne">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                              Bagaimana Cara Melakukan Booking ?
+                              Bagaimana Cara Melakukan Booking di Venika?
                             </button>
                           </h2>
                           <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                              <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                              <strong>Anda harus memiliki akun Venika.</strong> 
+					Lalu melakukan log-in. 
+					Pilih vendor yang ingin dipesan. 
+					Setelah memilih, anda dianjurkan untuk menghubungi vendor pada kontak yang tertera untuk negosiasi. 
+					Kemudian anda dapat mengisi form pemesanan dan melakukan booking.
                             </div>
                           </div>
                         </div>
@@ -237,12 +241,12 @@ if (isset($_SESSION['username'])){
                         <div class="accordion-item">
                           <h2 class="accordion-header" id="headingTwo">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                              Accordion Item #2
+                              Apakah Venika Menyediakan Sistem Pembayaran?
                             </button>
                           </h2>
                           <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                              <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                              <strong>Pembayaran pesanan dilakukan diluar sistem Venika.</strong> Pembayaran dapat dilakukan dengan kesepakatan bersama dengan vendor.
                             </div>
                           </div>
                         </div>
@@ -250,12 +254,12 @@ if (isset($_SESSION['username'])){
                         <div class="accordion-item">
                           <h2 class="accordion-header" id="headingThree">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                              Accordion Item #3
+                              Apakah Dapat Bekerjasama Dengan Venika?
                             </button>
                           </h2>
                           <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                              <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                              <strong>Ya.</strong> Anda dapat menghubungi kontak Venika yang tertera.
                             </div>
                           </div>
                         </div>
