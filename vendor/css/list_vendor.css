@@ -279,20 +279,18 @@ h2 {
     font-size: 16px;
 }
 
-.card-body i {
+/* .card-body i {
     color: #D0D0D0;
     position: absolute;
     bottom: 30px;
     right: 30px;
-    /* padding-left: 280px; */
-    /* margin-right: 20px; */
     font-size: 24px;
 }
 
 .card-body i:hover {
     color: #fd4646;
     transition: all ease-in 0.2s;
-}
+} */
 
 /* Vendor Favorit */
 .card-body .love {
@@ -302,6 +300,20 @@ h2 {
     right: 30px;
     font-size: 24px;
 }
+
+.product-rating i {
+    color: #ffd000;
+/*     position: absolute; */
+    bottom: 30px;
+    right: 30px;
+    /* padding-left: 280px; */
+    /* margin-right: 20px; */
+    font-size: 16px;
+}
+
+/* .card-body .full {
+    color: #ffd900;
+} */
 
 
 
