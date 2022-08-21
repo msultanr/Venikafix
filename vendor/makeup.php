@@ -319,7 +319,6 @@ if (isset($_SESSION['username'])){
               <option class="option" value="Melayu">Melayu</option>
               <option class="option" value="Sunda">Sunda</option>
               <option class="option" value="Nusantara">Nusantara</option>
-<<<<<<< HEAD
             </select>
           </div>
 
@@ -333,8 +332,6 @@ if (isset($_SESSION['username'])){
               <option class="option" value="3">Bintang 3</option>
               <option class="option" value="2">Bintang 2</option>
               <option class="option" value="1">Bintang 1</option>
-=======
->>>>>>> 6437a1aaa9b78d1d2f2888bd531d40e68292899c
             </select>
           </div>
 
