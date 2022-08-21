@@ -22,6 +22,10 @@ if ($_SESSION['tipe'] != "user"){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'> -->
 
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+		
     <!-- CSS -->
     <link rel="stylesheet" href="css/dashboard_vendor.css">
 
@@ -244,6 +248,7 @@ if ($_SESSION['tipe'] != "user"){
 								<th>Produk/Jasa</th>
 								<th>Status</th>
 								<th>Catatan</th>
+								<th>Rating</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -287,12 +292,61 @@ if ($_SESSION['tipe'] != "user"){
 									<td>
 										<?php echo $note; ?>
 									</td>
+									<td style="text-align:center";>
+									4.5 <br>
+
+									<button type="button" class="ubah-status btn btn-outline-warning btn-icon-text btn_ubah"
+										data-bs-toggle="modal" data-bs-target="#beriRating" data-id="<?php echo($id_booking)?>">
+										Beri Nilai
+									</button>
 								</tr>
 								<?php } ?>
 						</tbody>
 					</table>
 				</div>
 
+			</div>
+
+			<!-- FORM MODAL -->
+			<div class="modal fade" id="beriRating" tabindex="-1" aria-labelledby="exampleModalLabel" data-bs-backdrop="static"
+				aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLabel">Beri Nilai</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body">
+							<form class="needs-validation" action="update_status.php" method="POST">
+							<div class="container">
+							<div class="rating-wrap">
+								<!-- <h2>Star Rating</h2> -->
+								<div class="center">
+									<fieldset class="rating">
+										<input type="radio" id="star5" name="rating" value="5"/><label for="star5" class="full" title="Awesome"></label>
+										<input type="radio" id="star4" name="rating" value="4"/><label for="star4" class="full"></label>
+										<input type="radio" id="star3" name="rating" value="3"/><label for="star3" class="full"></label>
+										<input type="radio" id="star2" name="rating" value="2"/><label for="star2" class="full"></label>
+										<input type="radio" id="star1" name="rating" value="1"/><label for="star1" class="full"></label>
+									</fieldset>
+								</div>
+
+								<h4 id="rating-value"></h4> <br>
+
+								<textarea class="form-control" id="message-text" name="note" placeholder="Tulis Komentar.." cols="30" rows="5"></textarea>
+							</div>
+						</div>
+
+
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn_tutup" data-bs-dismiss="modal">Batal</button>
+							<button type="submit" name="submit" class="btn_tambah">Kirim</button>
+						</div>
+
+					</div>
+					</form>
+				</div>
 			</div>
 					</div>
 				</div>
@@ -303,6 +357,7 @@ if ($_SESSION['tipe'] != "user"){
 	<!-- NAVBAR -->
 
 
+	<script src="js/rating.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 	<script src="js/dashboard_vendor.js"></script>
 
