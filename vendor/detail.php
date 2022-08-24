@@ -323,7 +323,6 @@ if (isset($_SESSION['username'])){
             <?php } }?>
 
             <!-- REVISI START -->
-<<<<<<< HEAD
             <?php 
                 $sql = mysqli_query($koneksi,
                 "SELECT FORMAT(avg(rating),1) as rating, FORMAT(count(rating),0) as jumlah_rating FROM booking, jenis_layanan
@@ -530,16 +529,6 @@ if (isset($_SESSION['username'])){
               <?php }
                 ?>
               
-=======
-            <div class = "product-rating" data-bs-toggle="modal" data-bs-target="#lihatRating">
-                <i class = "fas fa-star active"></i>
-                <i class = "fas fa-star active"></i>
-                <i class = "fas fa-star active"></i>
-                <i class = "fas fa-star active"></i>
-                <i class = "fas fa-star-half-alt active"></i>
-                <span>4.7 <span>(21)</span></span>
-              </div>
->>>>>>> 2937755b58a64c5661c4910d41873886bd45531c
 
               <!-- REVISI END -->
 

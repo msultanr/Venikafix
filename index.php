@@ -268,11 +268,7 @@ if (isset($_SESSION['username'])){
               <option class="option" value="sewamobil">Sewa Mobil</option>
               <option class="option" value="gaunpengantin">Gaun Pengantin</option>
               <option class="option" value="mc">MC</option>
-<<<<<<< HEAD
               <option class="option" value="weddingorganizer">Wedding Organizer</option>
-=======
-              <option class="option" value="wo">Wedding Organizer</option>
->>>>>>> 2937755b58a64c5661c4910d41873886bd45531c
             </select>
           </div>
 
@@ -334,7 +330,7 @@ if (isset($_SESSION['username'])){
 
           <!-- REVISI RATING -->
            <!-- Filter Rating -->
-          <div class="col-auto" style="margin-left: 60px; margin-top: -10px;">
+          <!-- <div class="col-auto" style="margin-left: 60px; margin-top: -10px;">
             <select name="rating" class="form-select" id="inputGroupSelect01">
               <option selected class="option" value="">Rating</option>
               <option class="option" value="5">Bintang 5</option>
@@ -343,10 +339,10 @@ if (isset($_SESSION['username'])){
               <option class="option" value="2">Bintang 2</option>
               <option class="option" value="1">Bintang 1</option>
             </select>
-          </div>
+          </div> -->
 
           <!-- Button Cari -->
-          <div class="col-auto" style="margin-left: -60px;">
+          <div class="col-auto">
             <button name="search" class="btn_search" type="submit" id="button-addon2">Cari</button>
           </div>
         </div>
@@ -477,15 +473,9 @@ if (isset($_SESSION['username'])){
 
         <div class="col-auto text-center">
           <div class="col-md-3">
-<<<<<<< HEAD
           <a href="vendor/weddingorganizer.php"><div class="card-kategori">
               <div class="circle-icon ">
                 <i class="fa-solid fa-sitemap"></i>
-=======
-          <a href="vendor/mc.php"><div class="card-kategori">
-              <div class="circle-icon ">
-              <i class="fa-solid fa-people-group"></i>
->>>>>>> 2937755b58a64c5661c4910d41873886bd45531c
                 <h4>Wedding Organizer</h4>
               </div>
             </div></a>

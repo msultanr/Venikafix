@@ -206,7 +206,7 @@ if (isset($_SESSION['username'])){
         <div class="container" h-100>
           <div class="row" h-100>
             <div class="col-md-6 hero-tagline my-auto">
-                <img src="img/wo.png" alt="" class="position-absolute end-0 bottom-0 img-hero">
+                <img src="img/bg_wo.jpg" alt="" class="position-absolute end-0 bottom-0 img-hero">
               <h1>Bingung Cari Wedding Organizer?</h1>
               <p>Temukan Wedding Organizer terbaik disini...</p>
               <button class="btn_cari_sekarang">Cari sekarang...</button>
