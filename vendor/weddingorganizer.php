@@ -7,10 +7,10 @@
     echo "<script> alert('Login Terlebih Dahulu!')</script>";
     echo "<script>document.location.href='../login.php';</script>";
     die();
-
-
 }
 $id = $_SESSION['id'];
+
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -56,7 +56,7 @@ if (isset($_SESSION['username'])){
   <!-- Navbar Login -->
   <nav class="navbar navbar-expand-lg bg-transparent navbar-light position-fixed w-100">
     <div class="container">
-      <a class="navbar-brand" href="../index.php" style="color: #FF7171;">
+    <a class="navbar-brand" href="../index.php" style="color: #FF7171;">
         <img src="../profile/img/venikasvgfix2.svg" alt="" width="30" height="30"
           class="d-inline-block align-text-top" me-3>Venika</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -88,28 +88,28 @@ if (isset($_SESSION['username'])){
                     <ul class="nav-right">
                       <li class="user-profile header-notification">
                         <a href="#!" class="arrowdown">
-                          <?php
-                          if($_SESSION['tipe'] == 'user'){
-                                $sql = mysqli_query($koneksi,
-                                "SELECT photo From user WHERE id = '$id'");
-                                while ($cek = mysqli_fetch_assoc($sql)){
-                                    $photo = $cek['photo'];
-                                    if ($photo == NULL){
-                                      echo '<img src="img/circle-user-solid.svg" class="profile-pic-div" alt="User-Profile-Image">';
-                                      }
-                                      else{
-                                      echo '<img src="../photo/' . $photo . '" class="profile-pic-div" alt="User-Profile-Image">'; }}}
-                          if($_SESSION['tipe'] == 'vendor'){
-                            $sql = mysqli_query($koneksi,
-                                "SELECT photo From vendor WHERE id = '$id'");
-                                while ($cek = mysqli_fetch_assoc($sql)){
-                                    $photo = $cek['photo'];
-                                    if ($photo == NULL){
-                                      echo '<img src="img/circle-user-solid.svg" class="profile-pic-div" alt="User-Profile-Image">';
-                                      }
-                                      else{
-                                      echo '<img src="../photo/' . $photo . '" class="profile-pic-div" alt="User-Profile-Image">'; }}
-                          } ?>
+                        <?php
+                        if($_SESSION['tipe'] == 'user'){
+                              $sql = mysqli_query($koneksi,
+                              "SELECT photo From user WHERE id = '$id'");
+                              while ($cek = mysqli_fetch_assoc($sql)){
+                                  $photo = $cek['photo'];
+                                  if ($photo == NULL){
+                                    echo '<img src="img/circle-user-solid.svg" class="profile-pic-div" alt="User-Profile-Image">';
+                                    }
+                                    else{
+                                    echo '<img src="../photo/' . $photo . '" class="profile-pic-div" alt="User-Profile-Image">'; }}}
+                        if($_SESSION['tipe'] == 'vendor'){
+                          $sql = mysqli_query($koneksi,
+                              "SELECT photo From vendor WHERE id = '$id'");
+                              while ($cek = mysqli_fetch_assoc($sql)){
+                                  $photo = $cek['photo'];
+                                  if ($photo == NULL){
+                                    echo '<img src="img/circle-user-solid.svg" class="profile-pic-div" alt="User-Profile-Image">';
+                                    }
+                                    else{
+                                    echo '<img src="../photo/' . $photo . '" class="profile-pic-div" alt="User-Profile-Image">'; }}}
+                         ?>
                           <?php echo' <span>' . $_SESSION['username'] . '</span> ';?>
                           <i class="fas fa-angle-down toggle"></i>
                         </a>
@@ -166,7 +166,7 @@ if (isset($_SESSION['username'])){
   <nav class="navbar navbar-expand-lg navbar-light bg-transparent position-fixed w-100">
     <div class="container">
 
-      <a class="navbar-brand" href="../index.php" style="color: #FF7171;">
+    <a class="navbar-brand" href="../index.php" style="color: #FF7171;">
         <img src="../profile/img/venikasvgfix2.svg" alt="" width="30" height="30"
           class="d-inline-block align-text-top" me-3>Venika</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -184,7 +184,7 @@ if (isset($_SESSION['username'])){
             <a class="nav-link" href="katering.php">Vendor</a>
           </li>
           <li class="nav-item mx-3">
-            <a class="nav-link" href="#">Tentang Kami</a>
+            <a class="nav-link" href="../tentang_kami.php">Tentang Kami</a>
           </li>
         </ul>
 
@@ -200,16 +200,15 @@ if (isset($_SESSION['username'])){
 <?php
   }
 ?>
-
       <!-- HERO SECTION -->
       <section id="hero">
             <!-- h-100 : height agar memenuhi layar -->
         <div class="container" h-100>
           <div class="row" h-100>
             <div class="col-md-6 hero-tagline my-auto">
-                <img src="img/bg_mua.jpg" alt="" class="position-absolute end-0 bottom-0 img-hero">
-              <h1>Tampil Cantik Di Hari Spesial ? It’s a must !</h1>
-              <p>Temukan Makeup Artist terbaik disini...</p>
+                <img src="img/wo.png" alt="" class="position-absolute end-0 bottom-0 img-hero">
+              <h1>Bingung Cari Wedding Organizer?</h1>
+              <p>Temukan Wedding Organizer terbaik disini...</p>
               <button class="btn_cari_sekarang">Cari sekarang...</button>
             </div>
           </div>
@@ -222,7 +221,7 @@ if (isset($_SESSION['username'])){
     <div class="container">
       <div class="row">
         <div class="col-12 text-center">
-          <h2>VENDOR</h2>
+          <h2>Wedding Organizer</h2>
         </div>
       </div>
 
@@ -282,29 +281,29 @@ if (isset($_SESSION['username'])){
               <option class="option" value="Pedurungan">Pedurungan</option>
               <option class="option" value="SemarangBarat">Semarang Barat</option>
               <option class="option" value="SemarangSelatan">Semarang Selatan</option>
-              <option class="option" value="Semarang Tengah">Semarang Tengah</option>
+              <option class="option" value="SemarangTengah">Semarang Tengah</option>
               <option class="option" value="SemarangUtara">Semarang Utara</option>
               <option class="option" value="Tembalang">Tembalang</option>
               <option class="option" value="Tugu">Tugu</option>
-              <option class="option" value="Ambarawa">Ambarawa</option>
-              <option class="option" value="Bancak">Bancak</option>
-              <option class="option" value="Bandungan">Bandungan</option>
-              <option class="option" value="Banyubiru">Banyubiru</option>
-              <option class="option" value="Bawen">Bawen</option>
-              <option class="option" value="Bergas">Bergas</option>
-              <option class="option" value="Bringin">Bringin</option>
-              <option class="option" value="Getasan">Getasan</option>
-              <option class="option" value="Jambu">Jambu</option>
-              <option class="option" value="Kaliwungu">Kaliwungu</option>
-              <option class="option" value="Pabelan">Pabelan</option>
-              <option class="option" value="Pringapus">Pringapus</option>
-              <option class="option" value="Suruh">Suruh</option>
-              <option class="option" value="Susukan">Susukan</option>
-              <option class="option" value="Sumowono">Sumowono</option>
-              <option class="option" value="Tengaran">Tengaran</option>
-              <option class="option" value="Tuntang">Tuntang</option>
-              <option class="option" value="UngaranBarat">Ungaran Barat</option>
-              <option class="option" value="UngaranTimur">Ungaran Timur</option>
+            <option class="option" value="Ambarawa">Ambarawa</option>
+            <option class="option" value="Bancak">Bancak</option>
+            <option class="option" value="Bandungan">Bandungan</option>
+            <option class="option" value="Banyubiru">Banyubiru</option>
+            <option class="option" value="Bawen">Bawen</option>
+            <option class="option" value="Bergas">Bergas</option>
+            <option class="option" value="Bringin">Bringin</option>
+            <option class="option" value="Getasan">Getasan</option>
+            <option class="option" value="Jambu">Jambu</option>
+            <option class="option" value="Kaliwungu">Kaliwungu</option>
+            <option class="option" value="Pabelan">Pabelan</option>
+            <option class="option" value="Pringapus">Pringapus</option>
+            <option class="option" value="Suruh">Suruh</option>
+            <option class="option" value="Susukan">Susukan</option>
+            <option class="option" value="Sumowono">Sumowono</option>
+            <option class="option" value="Tengaran">Tengaran</option>
+            <option class="option" value="Tuntang">Tuntang</option>
+            <option class="option" value="UngaranBarat">Ungaran Barat</option>
+            <option class="option" value="UngaranTimur">Ungaran Timur</option>
             </select>
           </div>
 
@@ -319,21 +318,8 @@ if (isset($_SESSION['username'])){
               <option class="option" value="Jawa">Jawa</option>
               <option class="option" value="Melayu">Melayu</option>
               <option class="option" value="Sunda">Sunda</option>
-              <option class="option" value="Nusantara">Nusantara</option>
-            </select>
-          </div>
-
-          <!-- REVISI RATING -->
-           <!-- Filter Rating -->
-           <div class="col-auto" style="margin-left: 60px; margin-top: -10px;">
-            <select name="rating" class="form-select" id="inputGroupSelect01">
-              <option selected class="option" value="">Rating</option>
-              <option class="option" value="5">Bintang 5</option>
-              <option class="option" value="4">Bintang 4</option>
-              <option class="option" value="3">Bintang 3</option>
-              <option class="option" value="2">Bintang 2</option>
-              <option class="option" value="1">Bintang 1</option>
-            </select>
+<option class="option" value="Nusantara">Nusantara</option>            
+</select>
           </div>
 
           <!-- Button Cari -->
@@ -347,14 +333,14 @@ if (isset($_SESSION['username'])){
     </div>
   </section>
 
-      <!-- Makeup SECTION -->
-      <section id="katering">
+      <!-- Dekorasi SECTION -->
+      <section id="weddingorganizer">
           <div class="container">
               <div class="row">
                 <?php
                   $sql = mysqli_query($koneksi,
-                  "SELECT DISTINCT vendor.id, vendor.nama, vendor.kecamatan, jenis_layanan.galeri, jenis_layanan.nama_layanan, jenis_layanan.id as id_jenis, jenis_layanan.adat
-                  FROM vendor, jenis_layanan WHERE jenis_layanan.nama_layanan = 'makeup'
+                  "SELECT DISTINCT vendor.id, vendor.nama, vendor.kecamatan, jenis_layanan.galeri, jenis_layanan.nama_layanan, jenis_layanan.id as id_jenis
+                  FROM vendor, jenis_layanan WHERE jenis_layanan.nama_layanan = 'weddingorganizer'
                   AND vendor.id = jenis_layanan.id_vendor");
                   while ($cek = mysqli_fetch_assoc($sql)){
                     $nama = $cek["nama"];
@@ -363,22 +349,19 @@ if (isset($_SESSION['username'])){
                     $id = $cek["id"];
                     $galeri = $cek["galeri"];
                     $id_jenis = $cek["id_jenis"];
-                    $adat = $cek["adat"];
-                    $kecamatan = preg_replace('/(?<!\ )[A-Z]/', ' $0', $kecamatan);
+		                $kecamatan = preg_replace('/(?<!\ )[A-Z]/', ' $0', $kecamatan);
 
                   ?>
                     <div class="col-4">
-                        <div class="card">
+                        <div class="card" style="width: 22rem;">
                         <?php echo '<img src="../thumbnail/' . $galeri . '"alt="" id="photo">' ?>
                             <div class="card-body">
-                                <?php echo '<h4>'. $nama .'</h4>';?>
-                               <?php echo '<p> ' . $kecamatan .', Semarang <br>';?>
-                               <?php echo '<span class="text-danger">Adat ' . $adat . '</p>';?>
-
-                               <?php 
+                                <?php echo '<h4>'. $nama .'</h4>';
+                                echo '<p>' . $kecamatan . ', Semarang</p>';?>
+                                <?php 
                 $sql2 = mysqli_query($koneksi,
                 "SELECT FORMAT(avg(rating),1) as rating, FORMAT(count(rating)/2,0) as jumlah_rating FROM booking, jenis_layanan
-                WHERE rating IS NOT NULL AND booking.id_vendor = '$id' AND booking.jenis_layanan = jenis_layanan.nama_layanan AND booking.jenis_layanan = 'makeup'");
+                WHERE rating IS NOT NULL AND booking.id_vendor = '$id' AND booking.jenis_layanan = jenis_layanan.nama_layanan AND booking.jenis_layanan = 'Weddingorganizer'");
                 $cekk = mysqli_fetch_assoc($sql2);
                 $rating = $cekk['rating'];
                 $jumlah_rating = $cekk['jumlah_rating'];
@@ -389,7 +372,7 @@ if (isset($_SESSION['username'])){
                     case '0.3':
                     case '0.4':
                         ?>
-                      <div class = "detail-rating product-rating" data-bs-toggle="modal" data-bs-target="#lihatRating" data-id="<?php echo($id_vendor)?>" data-id2="<?php echo($id_jenis)?>">
+                      <div class = "product-rating">
                       <span class = "fas fa-star"></span>
                       <span class = "fas fa-star"></span>
                       <span class = "fas fa-star"></span>
@@ -405,7 +388,7 @@ if (isset($_SESSION['username'])){
                     case '0.8':
                     case '0.9':
                         ?>
-                      <div class = "detail-rating product-rating" data-bs-toggle="modal" data-bs-target="#lihatRating" data-id="<?php echo($id_vendor)?>" data-id2="<?php echo($id_jenis)?>">
+                      <div class = "product-rating">
                       <i class = "fas fa-star-half-alt checked"></i>
                       <span class = "fas fa-star"></span>
                       <span class = "fas fa-star"></span>
@@ -421,7 +404,7 @@ if (isset($_SESSION['username'])){
                     case '1.3':
                     case '1.4':
                       ?>
-                    <div class = "detail-rating product-rating" data-bs-toggle="modal" data-bs-target="#lihatRating" data-id="<?php echo($id_vendor)?>" data-id2="<?php echo($id_jenis)?>">
+                    <div class = "product-rating">
                     <i class = "fas fa-star checked"></i>
                     <span class = "fas fa-star"></span>
                     <span class = "fas fa-star"></span>
@@ -437,7 +420,7 @@ if (isset($_SESSION['username'])){
                   case '1.8':
                   case '1.9':
                       ?>
-                    <div class = "detail-rating product-rating" data-bs-toggle="modal" data-bs-target="#lihatRating" data-id="<?php echo($id_vendor)?>" data-id2="<?php echo($id_jenis)?>">
+                    <div class = "product-rating">
                     <i class = "fas fa-star checked"></i>
                     <i class = "fas fa-star-halt-alt checked"></i>
                     <span class = "fas fa-star"></span>
@@ -453,7 +436,7 @@ if (isset($_SESSION['username'])){
                     case '2.3':
                     case '2.4':
                       ?>
-                    <div class = "detail-rating product-rating" data-bs-toggle="modal" data-bs-target="#lihatRating" data-id="<?php echo($id_vendor)?>" data-id2="<?php echo($id_jenis)?>">
+                    <div class = "product-rating">
                     <i class = "fas fa-star checked"></i>
                     <i class = "fas fa-star checked"></i>
                     <span class = "fas fa-star"></span>
@@ -469,7 +452,7 @@ if (isset($_SESSION['username'])){
                   case '2.8':
                   case '2.9':
                       ?>
-                    <div class = "detail-rating product-rating" data-bs-toggle="modal" data-bs-target="#lihatRating" data-id="<?php echo($id_vendor)?>" data-id2="<?php echo($id_jenis)?>">
+                    <div class = "product-rating">
                     <i class = "fas fa-star checked"></i>
                     <i class = "fas fa-star checked"></i>
                     <i class = "fas fa-star-half-alt checked"></i>
@@ -485,7 +468,7 @@ if (isset($_SESSION['username'])){
                   case '3.3':
                   case '3.4':
                       ?>
-                    <div class = "detail-rating product-rating" data-bs-toggle="modal" data-bs-target="#lihatRating" data-id="<?php echo($id_vendor)?>" data-id2="<?php echo($id_jenis)?>">
+                    <div class = "product-rating">
                     <i class = "fas fa-star checked"></i>
                     <i class = "fas fa-star checked"></i>
                     <i class = "fas fa-star checked"></i>
@@ -501,7 +484,7 @@ if (isset($_SESSION['username'])){
                   case '3.8':
                   case '3.9':
                       ?>
-                    <div class = "detail-rating product-rating" data-bs-toggle="modal" data-bs-target="#lihatRating" data-id="<?php echo($id_vendor)?>" data-id2="<?php echo($id_jenis)?>">
+                    <div class = "product-rating">
                     <i class = "fas fa-star checked"></i>
                     <i class = "fas fa-star checked"></i>
                     <i class = "fas fa-star checked"></i>
@@ -517,7 +500,7 @@ if (isset($_SESSION['username'])){
                   case '4.3':
                   case '4.4':
                       ?>
-                    <div class = "detail-rating product-rating" data-bs-toggle="modal" data-bs-target="#lihatRating" data-id="<?php echo($id_vendor)?>" data-id2="<?php echo($id_jenis)?>">
+                    <div class = "product-rating">
                     <i class = "fas fa-star checked"></i>
                     <i class = "fas fa-star checked"></i>
                     <i class = "fas fa-star checked"></i>
@@ -533,7 +516,7 @@ if (isset($_SESSION['username'])){
                   case '4.8':
                   case '4.9':
                       ?>
-                    <div class = "detail-rating product-rating" data-bs-toggle="modal" data-bs-target="#lihatRating" data-id="<?php echo($id_vendor)?>" data-id2="<?php echo($id_jenis)?>">
+                    <div class = "product-rating">
                     <i class = "fas fa-star checked"></i>
                     <i class = "fas fa-star checked"></i>
                     <i class = "fas fa-star checked"></i>
@@ -545,7 +528,7 @@ if (isset($_SESSION['username'])){
                     break;
                   case '5':
                       ?>
-                    <div class = "detail-rating product-rating" data-bs-toggle="modal" data-bs-target="#lihatRating" data-id="<?php echo($id_vendor)?>" data-id2="<?php echo($id_jenis)?>">
+                    <div class = "product-rating">
                     <i class = "fas fa-star checked"></i>
                     <i class = "fas fa-star checked"></i>
                     <i class = "fas fa-star checked"></i>
@@ -557,7 +540,7 @@ if (isset($_SESSION['username'])){
                     break;
                   case 'NULL':
                       ?>
-                    <div class = "detail-rating product-rating" data-bs-toggle="modal" data-bs-target="#lihatRating" data-id="<?php echo($id_vendor)?>" data-id2="<?php echo($id_jenis)?>">
+                    <div class = "product-rating">
                     <i class = "fas fa-star"></i>
                     <i class = "fas fa-star"></i>
                     <i class = "fas fa-star"></i>
@@ -580,6 +563,7 @@ if (isset($_SESSION['username'])){
                     </div>
                 <?php }
                   ?>
+                
                                 <!-- <img src="img/love.png" alt=""> -->
 
                                 <?php echo'<a href="detail.php?' . $id .'?' . $id_jenis . '" class="stretched-link"></a>';?>

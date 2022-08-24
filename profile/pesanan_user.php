@@ -247,14 +247,14 @@ if ($_SESSION['tipe'] != "user"){
 								<th>Layanan</th>
 								<th>Produk/Jasa</th>
 								<th>Status</th>
-								<th>Catatan</th>
 								<th>Rating</th>
+								<th>Komentar</th>
 							</tr>
 						</thead>
 						<tbody>
 							<?php
 							$sql = mysqli_query($koneksi,
-							"SELECT * FROM booking,note WHERE id_user = '$id' AND booking.id = note.id_booking AND (status = '1' or status = '2' or status = '3')");
+							"SELECT * FROM booking,note WHERE id_user = '$id' AND booking.id = note.id_booking AND (status = '1' or status = '2')");
 							while ($cek = mysqli_fetch_assoc($sql)){
 								$nama = $cek['nama'];
 								$no_hp = $cek['no_hp'];
@@ -263,6 +263,9 @@ if ($_SESSION['tipe'] != "user"){
 								$paket = $cek['paket'];
 								$status = $cek['status'];
 								$note = $cek['note'];
+								$id_booking = $cek['id_booking'];
+								$komentar = $cek['komentar'];
+								$rating = $cek['rating']
 
 
 
@@ -274,7 +277,8 @@ if ($_SESSION['tipe'] != "user"){
 									<?php echo '<td>' . $no_hp . '</td>';
 									echo '<td>' . $tanggal . '</td>';
 									echo '<td>' . $jenis_layanan . '</td>';
-									echo '<td>' . $paket . '</td>'; ?>
+									echo '<td>' . $paket . '</td>';
+									 ?>
 									<td>
 										<?php
 										switch($status){
@@ -289,16 +293,81 @@ if ($_SESSION['tipe'] != "user"){
 												break;
 										} ?>
 									</td>
-									<td>
-										<?php echo $note; ?>
-									</td>
 									<td style="text-align:center";>
-									4.5 <br>
-
-									<button type="button" class="ubah-status btn btn-outline-warning btn-icon-text btn_ubah"
+									<?php echo $rating;?>
+									<?php if(!isset($rating) && $status == '2'){?>
+									<button type="button" class="beri-rating btn btn-outline-warning btn-icon-text btn_ubah"
 										data-bs-toggle="modal" data-bs-target="#beriRating" data-id="<?php echo($id_booking)?>">
 										Beri Nilai
 									</button>
+									<?php }?>
+
+									<?php echo '<td>' . $komentar . '</td>';?>
+								</tr>
+								<?php } ?>
+						</tbody>
+					</table>
+				</div>
+
+			</div>
+
+			<div class="table-data">
+				<div class="order">
+					<div class="head">
+						<h3>Pesanan Ditolak</h3>
+					</div>
+					<table>
+						<thead>
+							<tr>
+								<th>Nama</th>
+								<th>Telephone</th>
+								<th>Tgl Booking</th>
+								<th>Layanan</th>
+								<th>Produk/Jasa</th>
+								<th>Status</th>
+								<th>Catatan</th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php
+							$sql = mysqli_query($koneksi,
+							"SELECT * FROM booking,note WHERE id_user = '$id' AND booking.id = note.id_booking AND status = '3'");
+							while ($cek = mysqli_fetch_assoc($sql)){
+								$nama = $cek['nama'];
+								$no_hp = $cek['no_hp'];
+								$tanggal = $cek['tanggal'];
+								$jenis_layanan = $cek['jenis_layanan'];
+								$paket = $cek['paket'];
+								$status = $cek['status'];
+								$note = $cek['note'];
+								$id_booking = $cek['id_booking'];
+
+
+								?>
+								<tr>
+									<td>
+										<?php echo '<p>' . $nama . '</p>'; ?>
+									</td>
+									<?php echo '<td>' . $no_hp . '</td>';
+									echo '<td>' . $tanggal . '</td>';
+									echo '<td>' . $jenis_layanan . '</td>';
+									echo '<td>' . $paket . '</td>';
+									 ?>
+									<td>
+										<?php
+										switch($status){
+											case "1":
+												echo '<span class="status proses">Process</span>';
+												break;
+											case "2":
+												echo '<span class="status selesai">Completed</span>';
+												break;
+											case "3":
+												echo '<span class="status ditolak">Ditolak</span>';
+												break;
+										} ?>
+									</td>
+									<?php echo '<td>' . $note . '</td>';?>
 								</tr>
 								<?php } ?>
 						</tbody>
@@ -317,7 +386,7 @@ if ($_SESSION['tipe'] != "user"){
 							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 						</div>
 						<div class="modal-body">
-							<form class="needs-validation" action="update_status.php" method="POST">
+							<form class="needs-validation" action="rating.php" method="POST">
 							<div class="container">
 							<div class="rating-wrap">
 								<!-- <h2>Star Rating</h2> -->
@@ -332,8 +401,8 @@ if ($_SESSION['tipe'] != "user"){
 								</div>
 
 								<h4 id="rating-value"></h4> <br>
-
-								<textarea class="form-control" id="message-text" name="note" placeholder="Tulis Komentar.." cols="30" rows="5"></textarea>
+								<input type="hidden" name="id_book" id="id_book">
+								<textarea class="form-control" id="message-text" name="komentar" placeholder="Tulis Komentar.." cols="30" rows="5"></textarea>
 							</div>
 						</div>
 
@@ -367,6 +436,17 @@ if ($_SESSION['tipe'] != "user"){
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
 		crossorigin="anonymous"></script>
+	
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script>
+		$(document).on("click", ".beri-rating", function () {
+			var myBookId = $(this).data('id');
+			$(".modal-body #id_book").val( myBookId );
+			// As pointed out in comments,
+			// it is unnecessary to have to manually call the modal.
+			// $('#addBookDialog').modal('show');
+		});
+	</script>
 
 	<!-- Option 2: Separate Popper and Bootstrap JS -->
 	<!--

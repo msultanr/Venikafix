@@ -268,6 +268,7 @@ if (isset($_SESSION['username'])){
               <option class="option" value="sewamobil">Sewa Mobil</option>
               <option class="option" value="gaunpengantin">Gaun Pengantin</option>
               <option class="option" value="mc">MC</option>
+              <option class="option" value="weddingorganizer">Wedding Organizer</option>
             </select>
           </div>
 
@@ -465,6 +466,17 @@ if (isset($_SESSION['username'])){
               <div class="circle-icon ">
                 <i class="fa-solid fa-user-tie"></i>
                 <h4>MC</h4>
+              </div>
+            </div></a>
+          </div>
+        </div>
+
+        <div class="col-auto text-center">
+          <div class="col-md-3">
+          <a href="vendor/weddingorganizer.php"><div class="card-kategori">
+              <div class="circle-icon ">
+                <i class="fa-solid fa-sitemap"></i>
+                <h4>Wedding Organizer</h4>
               </div>
             </div></a>
           </div>

@@ -344,6 +344,7 @@ if ($_SESSION['tipe'] != "vendor"){
 									<option value="musicband">Music Band</option>
 									<option value="sewamobil">Sewa Mobil</option>
 									<option value="soundsystem">Sound System</option>
+									<option value="weddingorganizer">Wedding Organizer</option>
 								</select>
 							</div>
 							<div class="inputBox">

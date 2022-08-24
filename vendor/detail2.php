@@ -5,19 +5,11 @@ session_start();
 
     $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
     $id = parse_url($actual_link, PHP_URL_QUERY);
-    
-    if(isset($_SESSION['id'])){
-    $id_user = $_SESSION['id'];}
-
-    else{
-      echo "<script> alert('Login Terlebih Dahulu!')</script>";
-      echo "<script>document.location.href='../login.php';</script>";
-      die();
-    }
+    $id_user = $_SESSION['id'];
     $_GET['id'] = $id;
-    $param = explode("?", $id);
-    $id_vendor = $param[0];
-    $id_jenis = $param[1];
+    $id_vendor = substr($id,0,1);
+    $id_jenis = substr($id,2);
+
 
     $sql = mysqli_query($koneksi,
     "SELECT * FROM vendor, jenis_layanan WHERE vendor.id = jenis_layanan.id_vendor
@@ -31,6 +23,8 @@ session_start();
     $variasi = $cek["variasi"];
     $no_hp = $cek["no_hp"];
     $instagram = $cek["instagram"];
+    $facebook = $cek["facebook"];
+    $twitter = $cek["twitter"];
     $website = $cek["website"];
     $photo = $cek["photo"];
 
@@ -290,15 +284,10 @@ if (isset($_SESSION['username'])){
     <!-- Detail Vendor -->
 
     <section class="detail" id="detail">
-	<?php if($_SESSION['tipe'] == 'vendor'){
-	echo '<h2 class="product-title" style="margin-top: 50px;">Detail Layanan ' . $nama_layanan . '</h2>'; ?>
-        <div class="product-content">
-            <?php }
-	else{ ?>
-		<div class="product-content">
-		<?php echo '<h2 class="product-title" style="margin-top: 50px;">Detail Layanan ' . $nama_layanan . '</h2>'; }?>
+    <?php echo '<h2 class="product-title" style="margin-top: 50px;">Detail Layanan ' . $nama_layanan . '</h2>' ?>
+        <div class="product-content" >
+            
             <?php
-	    if($_SESSION['tipe'] == 'user'){
             $sql = mysqli_query($koneksi,
             "SELECT * FROM favorit where id_vendor ='$id_vendor' and id_jenis ='$id_jenis' and id_user='$id_user'");
             if(mysqli_num_rows($sql) > 0){
@@ -311,6 +300,14 @@ if (isset($_SESSION['username'])){
             <button type="submit" name="submit" class="btn_plus2" style="width:146px"><i class="fa-solid fa-heart"></i>Hapus favorit</button></a> <br>
             </form>
 
+            <!-- <div class="rating">
+              <i class="fa-solid fa-star full"></i>
+              <i class="fa-solid fa-star full"></i>
+              <i class="fa-solid fa-star full"></i>
+              <i class="fa-solid fa-star full"></i>
+              <i class="fa-solid fa-star-half-stroke half"></i>
+            </div> -->
+
             <?php }
             else { ?>
             <form action="tambah_favorit.php" method="POST">
@@ -318,227 +315,30 @@ if (isset($_SESSION['username'])){
             <?php echo '<input type="hidden" name="id_jenis" value="' . $id_jenis . '">';
             ?>
               <!-- <button type="submit" name="submit" class="btn_plus fa-solid fa-heart"> Favorit</button> <br> -->
-            <button type="submit" name="submit" class="btn_plus"><i class="fa-solid fa-heart"></i> Favorit</button></a> <br>
+            <!-- <button type="submit" name="submit" class="btn_plus"><i class="fa-solid fa-heart"></i> Favorit</button></a> <br> -->
             </form>
-            <?php } }?>
+            <?php } ?>
 
             <!-- REVISI START -->
-            <?php 
-                $sql = mysqli_query($koneksi,
-                "SELECT FORMAT(avg(rating),1) as rating, FORMAT(count(rating),0) as jumlah_rating FROM booking, jenis_layanan
-                WHERE rating IS NOT NULL AND booking.id_vendor = '$id_vendor' AND booking.jenis_layanan = jenis_layanan.nama_layanan and jenis_layanan.id = '$id_jenis'");
-                $cek = mysqli_fetch_assoc($sql);
-                $rating = $cek['rating'];
-                $jumlah_rating = $cek['jumlah_rating'];
-                if(isset($rating)){
-                switch($rating){
-                  case '0.1':
-                  case '0.2':
-                  case '0.3':
-                  case '0.4':
-                      ?>
-                    <div class = "detail-rating product-rating" data-bs-toggle="modal" data-bs-target="#lihatRating" data-id="<?php echo($id_vendor)?>" data-id2="<?php echo($id_jenis)?>">
-                    <span class = "fas fa-star"></span>
-                    <span class = "fas fa-star"></span>
-                    <span class = "fas fa-star"></span>
-                    <span class = "fas fa-star"></span>
-                    <span class = "fas fa-star"></span>
-                    <?php echo '<span>' . $rating . '(' . $jumlah_rating . ')</span>'; ?>
-                    </div>
-                  <?php
-                    break;
-                  case '0.5':
-                  case '0.6':
-                  case '0.7':
-                  case '0.8':
-                  case '0.9':
-                      ?>
-                    <div class = "detail-rating product-rating" data-bs-toggle="modal" data-bs-target="#lihatRating" data-id="<?php echo($id_vendor)?>" data-id2="<?php echo($id_jenis)?>">
-                    <i class = "fas fa-star-half-alt checked"></i>
-                    <span class = "fas fa-star"></span>
-                    <span class = "fas fa-star"></span>
-                    <span class = "fas fa-star"></span>
-                    <span class = "fas fa-star"></span>
-                    <?php echo '<span>' . $rating . '(' . $jumlah_rating . ')</span>'; ?>
-                    </div>
-                  <?php
-                    break;
-                  case '1':
-                  case '1.1':
-                  case '1.2':
-                  case '1.3':
-                  case '1.4':
-                    ?>
-                  <div class = "detail-rating product-rating" data-bs-toggle="modal" data-bs-target="#lihatRating" data-id="<?php echo($id_vendor)?>" data-id2="<?php echo($id_jenis)?>">
-                  <i class = "fas fa-star checked"></i>
-                  <span class = "fas fa-star"></span>
-                  <span class = "fas fa-star"></span>
-                  <span class = "fas fa-star"></span>
-                  <span class = "fas fa-star"></span>
-                  <?php echo '<span>' . $rating . '(' . $jumlah_rating . ')</span>'; ?>
-                  </div>
-                <?php
-                  break;
-                case '1.5':
-                case '1.6':
-                case '1.7':
-                case '1.8':
-                case '1.9':
-                    ?>
-                  <div class = "detail-rating product-rating" data-bs-toggle="modal" data-bs-target="#lihatRating" data-id="<?php echo($id_vendor)?>" data-id2="<?php echo($id_jenis)?>">
-                  <i class = "fas fa-star checked"></i>
-                  <i class = "fas fa-star-halt-alt checked"></i>
-                  <span class = "fas fa-star"></span>
-                  <span class = "fas fa-star"></span>
-                  <span class = "fas fa-star"></span>
-                  <?php echo '<span>' . $rating . '(' . $jumlah_rating . ')</span>'; ?>
-                  </div>
-                <?php
-                  break;
-                  case '2':
-                  case '2.1':
-                  case '2.2':
-                  case '2.3':
-                  case '2.4':
-                    ?>
-                  <div class = "detail-rating product-rating" data-bs-toggle="modal" data-bs-target="#lihatRating" data-id="<?php echo($id_vendor)?>" data-id2="<?php echo($id_jenis)?>">
-                  <i class = "fas fa-star checked"></i>
-                  <i class = "fas fa-star checked"></i>
-                  <span class = "fas fa-star"></span>
-                  <span class = "fas fa-star"></span>
-                  <span class = "fas fa-star"></span>
-                  <?php echo '<span>' . $rating . '(' . $jumlah_rating . ')</span>'; ?>
-                  </div>
-                <?php
-                  break;
-                case '2.5':
-                case '2.6':
-                case '2.7':
-                case '2.8':
-                case '2.9':
-                    ?>
-                  <div class = "detail-rating product-rating" data-bs-toggle="modal" data-bs-target="#lihatRating" data-id="<?php echo($id_vendor)?>" data-id2="<?php echo($id_jenis)?>">
-                  <i class = "fas fa-star checked"></i>
-                  <i class = "fas fa-star checked"></i>
-                  <i class = "fas fa-star-half-alt checked"></i>
-                  <span class = "fas fa-star"></span>
-                  <span class = "fas fa-star"></span>
-                  <?php echo '<span>' . $rating . '(' . $jumlah_rating . ')</span>'; ?>
-                  </div>
-                <?php
-                  break;
-                case '3':
-                case '3.1':
-                case '3.2':
-                case '3.3':
-                case '3.4':
-                    ?>
-                  <div class = "detail-rating product-rating" data-bs-toggle="modal" data-bs-target="#lihatRating" data-id="<?php echo($id_vendor)?>" data-id2="<?php echo($id_jenis)?>">
-                  <i class = "fas fa-star checked"></i>
-                  <i class = "fas fa-star checked"></i>
-                  <i class = "fas fa-star checked"></i>
-                  <span class = "fas fa-star"></span>
-                  <span class = "fas fa-star"></span>
-                  <?php echo '<span>' . $rating . '(' . $jumlah_rating . ')</span>'; ?>
-                  </div>
-                <?php
-                  break;
-                case '3.5':
-                case '3.6':
-                case '3.7':
-                case '3.8':
-                case '3.9':
-                    ?>
-                  <div class = "detail-rating product-rating" data-bs-toggle="modal" data-bs-target="#lihatRating" data-id="<?php echo($id_vendor)?>" data-id2="<?php echo($id_jenis)?>">
-                  <i class = "fas fa-star checked"></i>
-                  <i class = "fas fa-star checked"></i>
-                  <i class = "fas fa-star checked"></i>
-                  <i class = "fas fa-star-half-alt checked"></i>
-                  <span class = "fas fa-star"></span>
-                  <?php echo '<span>' . $rating . '(' . $jumlah_rating . ')</span>'; ?>
-                  </div>
-                <?php
-                  break;
-                case '4':
-                case '4.1':
-                case '4.2':
-                case '4.3':
-                case '4.4':
-                    ?>
-                  <div class = "detail-rating product-rating" data-bs-toggle="modal" data-bs-target="#lihatRating" data-id="<?php echo($id_vendor)?>" data-id2="<?php echo($id_jenis)?>">
-                  <i class = "fas fa-star checked"></i>
-                  <i class = "fas fa-star checked"></i>
-                  <i class = "fas fa-star checked"></i>
-                  <i class = "fas fa-star checked"></i>
-                  <span class = "fas fa-star"></span>
-                  <?php echo '<span>' . $rating . '(' . $jumlah_rating . ')</span>'; ?>
-                  </div>
-                <?php
-                  break;
-                case '4.5':
-                case '4.6':
-                case '4.7':
-                case '4.8':
-                case '4.9':
-                    ?>
-                  <div class = "detail-rating product-rating" data-bs-toggle="modal" data-bs-target="#lihatRating" data-id="<?php echo($id_vendor)?>" data-id2="<?php echo($id_jenis)?>">
-                  <i class = "fas fa-star checked"></i>
-                  <i class = "fas fa-star checked"></i>
-                  <i class = "fas fa-star checked"></i>
-                  <i class = "fas fa-star checked"></i>
-                  <i class = "fas fa-star-half-alt checked"></i>
-                  <?php echo '<span>' . $rating . '(' . $jumlah_rating . ')</span>'; ?>
-                  </div>
-                <?php
-                  break;
-                case '5':
-                    ?>
-                  <div class = "detail-rating product-rating" data-bs-toggle="modal" data-bs-target="#lihatRating" data-id="<?php echo($id_vendor)?>" data-id2="<?php echo($id_jenis)?>">
-                  <i class = "fas fa-star checked"></i>
-                  <i class = "fas fa-star checked"></i>
-                  <i class = "fas fa-star checked"></i>
-                  <i class = "fas fa-star checked"></i>
-                  <i class = "fas fa-star checked"></i>
-                  <?php echo '<span>' . $rating . '(' . $jumlah_rating . ')</span>'; ?>
-                  </div>
-                <?php
-                  break;
-                case 'NULL':
-                    ?>
-                  <div class = "detail-rating product-rating" data-bs-toggle="modal" data-bs-target="#lihatRating" data-id="<?php echo($id_vendor)?>" data-id2="<?php echo($id_jenis)?>">
-                  <i class = "fas fa-star"></i>
-                  <i class = "fas fa-star"></i>
-                  <i class = "fas fa-star"></i>
-                  <i class = "fas fa-star"></i>
-                  <i class = "fas fa-star"></i>
-                  <?php echo '<span>' . $rating . '(' . $jumlah_rating . ')</span>'; ?>
-                  </div>
-                <?php
-                  break;
-                }
-              }
-              if(!isset($rating)){ ?>
-                <div class = "detail-rating product-rating" data-bs-toggle="modal" data-bs-target="#lihatRating" data-id="<?php echo($id_vendor)?>" data-id2="<?php echo($id_jenis)?>">
-                <span class = "fas fa-star"></span>
-                <span class = "fas fa-star"></span>
-                <span class = "fas fa-star"></span>
-                <span class = "fas fa-star"></span>
-                <span class = "fas fa-star"></span>
-                  <?php echo '<span>' . $rating . '(' . $jumlah_rating . ')</span>'; ?>
-                  </div>
-              <?php }
-                ?>
-              
+            <div class = "product-rating" data-bs-toggle="modal" data-bs-target="#lihatRating">
+                <i class = "fas fa-star"></i>
+                <i class = "fas fa-star"></i>
+                <i class = "fas fa-star"></i>
+                <i class = "fas fa-star"></i>
+                <i class = "fas fa-star-half-alt"></i>
+                <span>4.7 <span>(21)</span></span>
+              </div>
 
               <!-- REVISI END -->
 
-		
+            <!-- <div class = "product-price">
+                <p class = "last-price">Old Price: <span>$257.00</span></p>
+                <p class = "new-price">New Price: <span>$249.00 (5%)</span></p>
+              </div> -->
+
             <nav>
-		<?php if($_SESSION['tipe'] == 'vendor'){ ?>
                 <div class="nav nav-tabs" id="nav-tab" role="tablist" style="margin-top: 150px;">
-                    <?php }
-			else { echo '<div class="nav nav-tabs" id="nav-tab" role="tablist">'; } ?>
-			<button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
+                    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
                         type="button" role="tab" aria-controls="nav-home" aria-selected="true">Tentang Vendor</button>
                     <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
                         type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Fasilitas</button>
@@ -568,9 +368,11 @@ if (isset($_SESSION['username'])){
                 <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
                     <h2>Kontak</h2>
                 <ul>
-                    <?php echo '<li>No. HP : <a href="https://wa.me/+62' . $no_hp . '" target="_blank" class="product-link">' . $no_hp . '</a></li>';
-                    echo '<li>Instagram : <a href="https://instagram.com/' . $instagram . '" target="_blank"  class="product-link"> ' . $instagram . '</a></li>';
-                     echo '<li>Website : <a href="https://' . $website . '" target="_blank" class="product-link">' . $website . '</a></li>'; ?>
+                    <li>No. HP : <a href="#" class="product-link"><?php echo $no_hp; ?></a></li>
+                    <li>Instagram : <a href="#" class="product-link"><?php echo $instagram; ?></a></li>
+                    <li>Facebook : <a href="#" class="product-link"><?php echo $facebook; ?></a></li>
+                    <li>Twitter : <a href="#" class="product-link"><?php echo $twitter; ?></a></li>
+                    <li>Website : <a href="#" class="product-link"><?php echo $website; ?></a></li>
                 </ul>
                 </div>
             </div>
@@ -650,171 +452,45 @@ if (isset($_SESSION['username'])){
 							<form class="needs-validation" action="update_status.php" method="POST">
 								<div class="mb-3">
 									<!-- <label for="recipient-name" class="col-form-label">Penilaian</label> -->
-                  <?php 
-                      $sql = mysqli_query($koneksi,
-                      "SELECT * FROM booking, jenis_layanan where status = '2' AND booking.id_vendor = '$id_vendor' AND booking.jenis_layanan = jenis_layanan.nama_layanan AND jenis_layanan.id = '$id_jenis'");
-                      while($cek = mysqli_fetch_assoc($sql)){
-                      $nama = $cek['nama'];
-                      $rating = $cek['rating'];
-                      $komentar = $cek['komentar'];
-                      ?>
-                      <div id="rating-user">
-                        <div class="detail-rating">
-                          <?php echo '<label for="" class="rating-name" style="font-weight: 600;">' . $nama . '</label>';?>
-                          <?php switch($rating){
-                  case '0':
-                      ?>
-                    <div class = "product-rating" style="margin-bottom 8px;">
-                    <span class = "fas fa-star"></span>
-                    <span class = "fas fa-star"></span>
-                    <span class = "fas fa-star"></span>
-                    <span class = "fas fa-star"></span>
-                    <span class = "fas fa-star"></span>
-                    <?php echo '<span>' . $rating . '</span>'; ?>
-                    </div>
-                  <?php
-                    break;
-                  case '0.5':
-                      ?>
-                    <div class = "product-rating" style="margin-bottom 8px;">
-                    <i class = "fas fa-star-half-alt checked"></i>
-                    <span class = "fas fa-star"></span>
-                    <span class = "fas fa-star"></span>
-                    <span class = "fas fa-star"></span>
-                    <span class = "fas fa-star"></span>
-                    <?php echo '<span>' . $rating . '</span>'; ?>
-                    </div>
-                  <?php
-                    break;
-                  case '1':
-                    ?>
-                  <div class = "product-rating" style="margin-bottom 8px;">
-                  <i class = "fas fa-star checked"></i>
-                  <span class = "fas fa-star"></span>
-                  <span class = "fas fa-star"></span>
-                  <span class = "fas fa-star"></span>
-                  <span class = "fas fa-star"></span>
-                  <?php echo '<span>' . $rating . '</span>'; ?>
-                  </div>
-                <?php
-                  break;
-                case '1.5':
-                    ?>
-                  <div class = "product-rating" style="margin-bottom 8px;">
-                  <i class = "fas fa-star checked"></i>
-                  <i class = "fas fa-star-halt-alt checked"></i>
-                  <span class = "fas fa-star"></span>
-                  <span class = "fas fa-star"></span>
-                  <span class = "fas fa-star"></span>
-                  <?php echo '<span>' . $rating . '</span>'; ?>
-                  </div>
-                <?php
-                  break;
-                  case '2':
-                    ?>
-                  <div class = "product-rating" style="margin-bottom 8px;">
-                  <i class = "fas fa-star checked"></i>
-                  <i class = "fas fa-star checked"></i>
-                  <span class = "fas fa-star"></span>
-                  <span class = "fas fa-star"></span>
-                  <span class = "fas fa-star"></span>
-                  <?php echo '<span>' . $rating . '</span>'; ?>
-                  </div>
-                <?php
-                  break;
-                case '2.5':
-                    ?>
-                  <div class = "product-rating" style="margin-bottom 8px;">
-                  <i class = "fas fa-star checked"></i>
-                  <i class = "fas fa-star checked"></i>
-                  <i class = "fas fa-star-half-alt checked"></i>
-                  <span class = "fas fa-star"></span>
-                  <span class = "fas fa-star"></span>
-                  <?php echo '<span>' . $rating . '</span>'; ?>
-                  </div>
-                <?php
-                  break;
-                case '3':
-                    ?>
-                  <div class = "product-rating" style="margin-bottom 8px;">
-                  <i class = "fas fa-star checked"></i>
-                  <i class = "fas fa-star checked"></i>
-                  <i class = "fas fa-star checked"></i>
-                  <span class = "fas fa-star"></span>
-                  <span class = "fas fa-star"></span>
-                  <?php echo '<span>' . $rating . '</span>'; ?>
-                  </div>
-                <?php
-                  break;
-                case '3.5':
-                    ?>
-                  <div class = "product-rating" style="margin-bottom 8px;">
-                  <i class = "fas fa-star checked"></i>
-                  <i class = "fas fa-star checked"></i>
-                  <i class = "fas fa-star checked"></i>
-                  <i class = "fas fa-star-half-alt checked"></i>
-                  <span class = "fas fa-star"></span>
-                  <?php echo '<span>' . $rating . '</span>'; ?>
-                  </div>
-                <?php
-                  break;
-                case '4':
-                    ?>
-                  <div class = "product-rating" style="margin-bottom 8px;">
-                  <i class = "fas fa-star checked"></i>
-                  <i class = "fas fa-star checked"></i>
-                  <i class = "fas fa-star checked"></i>
-                  <i class = "fas fa-star checked"></i>
-                  <span class = "fas fa-star"></span>
-                  <?php echo '<span>' . $rating . '</span>'; ?>
-                  </div>
-                <?php
-                  break;
-                case '4.5':
-                    ?>
-                  <div class = "product-rating" style="margin-bottom 8px;">
-                  <i class = "fas fa-star checked"></i>
-                  <i class = "fas fa-star checked"></i>
-                  <i class = "fas fa-star checked"></i>
-                  <i class = "fas fa-star checked"></i>
-                  <i class = "fas fa-star-half-alt checked"></i>
-                  <?php echo '<span>' . $rating . '</span>'; ?>
-                  </div>
-                <?php
-                  break;
-                case '5':
-                    ?>
-                  <div class = "product-rating" style="margin-bottom 8px;">
-                  <i class = "fas fa-star checked"></i>
-                  <i class = "fas fa-star checked"></i>
-                  <i class = "fas fa-star checked"></i>
-                  <i class = "fas fa-star checked"></i>
-                  <i class = "fas fa-star checked"></i>
-                  <?php echo '<span>' . $rating . '</span>'; ?>
-                  </div>
-                <?php
-                  break;
-                case 'NULL':
-                    ?>
-                  <div class = "product-rating" style="margin-bottom 8px;">
-                  <i class = "fas fa-star"></i>
-                  <i class = "fas fa-star"></i>
-                  <i class = "fas fa-star"></i>
-                  <i class = "fas fa-star"></i>
-                  <i class = "fas fa-star"></i>
-                  <?php echo '<span>' . $rating . '</span>'; ?>
-                  </div>
-                <?php
-                  break;
-                }?>
-                          <?php echo '<p style="text-align: justify;">' . $komentar . '</p>'; ?>
-                        </div>
+                  <div id="rating-user">
+                    <div class="detail-rating">
+                      <label for="" class="rating-name" style="margin-bottom: 8px; font-weight: 600;">Asiyya</label>
+                      <div class = "product-rating" style="margin-bottom: 8px";>
+                        <i class = "fas fa-star"></i>
+                        <i class = "fas fa-star"></i>
+                        <i class = "fas fa-star"></i>
+                        <i class = "fas fa-star"></i>
+                        <i class = "fas fa-star-half-alt"></i>
                       </div>
-                      <?php } ?>
-                    <!-- </div> -->
+                      <p style="text-align: justify;">Pelayanan Profesional, Produk lengkap, Memuaskan...</p>
+                    </div>
+                  </div>
+                  <div id="rating-user">
+                    <div class="detail-rating">
+                      <label for="" class="rating-name" style="margin-bottom: 8px; font-weight: 600;">Sultan</label>
+                      <div class = "product-rating" style="margin-bottom: 8px";>
+                        <i class = "fas fa-star"></i>
+                        <i class = "fas fa-star"></i>
+                        <i class = "fas fa-star"></i>
+                        <i class = "fas fa-star"></i>
+                        <i class = "fas fa-star-half-alt"></i>
+                      </div>
+                      <p style="text-align: justify;">Pelayanan Profesional, Produk lengkap, Memuaskan...</p>
+                    </div>
+                  </div>
+									<!-- <select name="status" class="form-select" aria-label="Default select example"
+										id="validationDefault03" required>
+										<option value="1">Proses</option>
+										<option value="2">Selesai</option>
+									</select> -->
+								</div>
 
 
 						</div>
+						<!-- <div class="modal-footer">
+							<button type="button" class="btn_tutup" data-bs-dismiss="modal">Batal</button>
+							<button type="submit" name="submit" class="btn_tambah"><i class="fa-solid fa-floppy-disk"></i>Simpan</button>
+						</div> -->
 
 					</div>
 					</form>
@@ -822,6 +498,7 @@ if (isset($_SESSION['username'])){
 			</div>
 
       <!-- REVISI RATING DETAIL END -->
+
     </section>
 
     <!-- Form Pemesanan -->
@@ -854,7 +531,7 @@ if (isset($_SESSION['username'])){
                         <input type="date" name="tanggal" id="validationDefault03" required>
                     </div>
                     <div class="inputBox">
-                        <?php echo '<input type="hidden" name="id" value="' . $id_vendor . '">'; ?>
+                        <?php echo '<input type="hidden" name="id" value="' . $_GET['id'] . '">'; ?>
                     </div>
                     <!-- <div class="inputBox">
                         <label for="">Alamat</label>
@@ -944,29 +621,6 @@ if (isset($_SESSION['username'])){
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-
-      <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-      <script>
-        $(document).on("click", ".detail-rating", function () {
-          var myBookId = $(this).data('id');
-          $(".modal-body #id_vendor").val( myBookId );
-          // As pointed out in comments,
-          // it is unnecessary to have to manually call the modal.
-          // $('#addBookDialog').modal('show');
-        });
-      </script>
-
-      <script>
-        $(document).on("click", ".detail-rating", function () {
-          var myBookId = $(this).data('id2');
-          $(".modal-body #id_jenis").val( myBookId );
-          // As pointed out in comments,
-          // it is unnecessary to have to manually call the modal.
-          // $('#addBookDialog').modal('show');
-        });
-      </script>
-
-      
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
