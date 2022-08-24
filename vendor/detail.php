@@ -316,16 +316,90 @@ if (isset($_SESSION['username'])){
 
             <!-- REVISI START -->
             <div class = "product-rating" data-bs-toggle="modal" data-bs-target="#lihatRating">
-                <i class = "fas fa-star"></i>
-                <i class = "fas fa-star"></i>
-                <i class = "fas fa-star"></i>
-                <i class = "fas fa-star"></i>
-                <i class = "fas fa-star-half-alt"></i>
+                <i class = "fas fa-star active"></i>
+                <i class = "fas fa-star active"></i>
+                <i class = "fas fa-star active"></i>
+                <i class = "fas fa-star active"></i>
+                <i class = "fas fa-star-half-alt active"></i>
                 <span>4.7 <span>(21)</span></span>
               </div>
 
               <!-- REVISI END -->
 
+              <div class="product-rating">
+                <div class = "star5">
+                  <i class = "fas fa-star active"></i>
+                  <i class = "fas fa-star active"></i>
+                  <i class = "fas fa-star active"></i>
+                  <i class = "fas fa-star active"></i>
+                  <i class = "fas fa-star active"></i>
+                </div>
+
+                <div class = "star4point">
+                  <i class = "fas fa-star active"></i>
+                  <i class = "fas fa-star active"></i>
+                  <i class = "fas fa-star active"></i>
+                  <i class = "fas fa-star active"></i>
+                  <i class = "fas fa-star-half-alt active"></i>
+                </div>
+
+                <div class = "star4">
+                  <i class = "fas fa-star active"></i>
+                  <i class = "fas fa-star active"></i>
+                  <i class = "fas fa-star active"></i>
+                  <i class = "fas fa-star active"></i>
+                  <i class = "fas fa-star"></i>
+                </div>
+
+                <div class = "star3point">
+                  <i class = "fas fa-star active"></i>
+                  <i class = "fas fa-star active"></i>
+                  <i class = "fas fa-star active"></i>
+                  <i class = "fas fa-star-half-alt active"></i>
+                  <i class = "fas fa-star"></i>
+                </div>
+
+                <div class = "star3">
+                  <i class = "fas fa-star active"></i>
+                  <i class = "fas fa-star active"></i>
+                  <i class = "fas fa-star active"></i>
+                  <i class = "fas fa-star"></i>
+                  <i class = "fas fa-star"></i>
+                </div>
+
+                <div class = "star2point">
+                  <i class = "fas fa-star active"></i>
+                  <i class = "fas fa-star active"></i>
+                  <i class = "fas fa-star-half-alt active"></i>
+                  <i class = "fas fa-star"></i>
+                  <i class = "fas fa-star"></i>
+                </div>
+
+                <div class = "star2">
+                  <i class = "fas fa-star active"></i>
+                  <i class = "fas fa-star active"></i>
+                  <i class = "fas fa-star"></i>
+                  <i class = "fas fa-star"></i>
+                  <i class = "fas fa-star"></i>
+                </div>
+
+                <div class = "star1point">
+                  <i class = "fas fa-star active"></i>
+                  <i class = "fas fa-star-half-alt active"></i>
+                  <i class = "fas fa-star"></i>
+                  <i class = "fas fa-star"></i>
+                  <i class = "fas fa-star"></i>
+                </div>
+
+                <div class = "star1">
+                  <i class = "fas fa-star active"></i>
+                  <i class = "fas fa-star"></i>
+                  <i class = "fas fa-star"></i>
+                  <i class = "fas fa-star"></i>
+                  <i class = "fas fa-star"></i>
+                </div>
+
+              </div>
 		
             <nav>
 		<?php if($_SESSION['tipe'] == 'vendor'){ ?>

@@ -289,12 +289,20 @@
  /* REVISI START */
  .product-rating {
   cursor: pointer;
+  margin-top: 50px;
 }
 .product-rating i {
+  color: #949494;
+  bottom: 30px;
+  font-size: 16px;
+}
+
+.product-rating i.active {
   color: #ffd000;
   bottom: 30px;
   font-size: 16px;
 }
+
 
 #rating-user {
 border: 0.02px solid #dddddd;
@@ -361,7 +369,7 @@ margin: 20px;
   }
 
   .btn_plus2 {
-    width: 120px;
+    width: 140px;
     height: 44px;
     background-color: #949494;
     color: #fff;
