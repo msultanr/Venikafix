@@ -292,10 +292,17 @@
   margin-top: 10px;
 }
 .product-rating i {
+  color: #949494;
+  bottom: 30px;
+  font-size: 16px;
+}
+
+.product-rating i.active {
   color: #ffd000;
   bottom: 30px;
   font-size: 16px;
 }
+
 
 #rating-user {
 border: 0.02px solid #dddddd;
