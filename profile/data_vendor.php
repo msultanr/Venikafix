@@ -413,8 +413,8 @@ if (!isset($_SESSION['is_login'])) {
                                 </td>
 
                                 <td>
-                                    <button type="button" class="btn btn-outline-warning btn-icon-text btn_ubah"
-                                        data-bs-toggle="modal" data-bs-target="#tentangVendor">
+                                    <button type="button" class="ubah-deskripsi btn btn-outline-warning btn-icon-text btn_ubah"
+                                        data-bs-toggle="modal" data-bs-target="#tentangVendor" data-id="<?php echo($deskripsi)?>">
                                         <i class="fa-solid fa-pen-to-square"></i> Ubah
                                     </button>
                                 </td>
@@ -435,8 +435,8 @@ if (!isset($_SESSION['is_login'])) {
                                 </td>
 
                                 <td>
-                                    <button type="button" class="btn btn-outline-warning btn-icon-text btn_ubah"
-                                        data-bs-toggle="modal" data-bs-target="#fasilitas">
+                                    <button type="button" class="ubah-fasilitas btn btn-outline-warning btn-icon-text btn_ubah"
+                                        data-bs-toggle="modal" data-bs-target="#fasilitas" data-id="<?php echo($fasilitas)?>">
                                         <i class="fa-solid fa-pen-to-square"></i> Ubah
                                     </button>
                             </tr>
@@ -455,8 +455,8 @@ if (!isset($_SESSION['is_login'])) {
                                 </td>
 
                                 <td>
-                                    <button type="button" class="btn btn-outline-warning btn-icon-text btn_ubah"
-                                        data-bs-toggle="modal" data-bs-target="#menu">
+                                    <button type="button" class="ubah-variasi btn btn-outline-warning btn-icon-text btn_ubah"
+                                        data-bs-toggle="modal" data-bs-target="#menu" data-id="<?php echo($variasi)?>">
                                         <i class="fa-solid fa-pen-to-square"></i> Ubah
                                     </button>
                                 </td>
@@ -528,8 +528,8 @@ if (!isset($_SESSION['is_login'])) {
 
                                 <div class="mb-3">
                                     <label for="message-text" class="col-form-label">Detail Layanan</label>
-                                    <textarea name="deskripsi" placeholder="jelaskan detail layanan vendor anda..." id="classic"
-                                        cols="30" rows="10"></textarea>
+                                    <textarea name="desc" id="desc"
+                                        cols="30" rows="10" value="desc"></textarea>
                                         <div>* Maksimal 500 Karakter</div>
                                         <?php echo '<input type="hidden" name="id_vendor" value=' . $id_vendor . '>'; ?>
                                         <?php echo '<input type="hidden" name="id_jenis" value=' . $id_jenis . '>';?>
@@ -626,6 +626,35 @@ if (!isset($_SESSION['is_login'])) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
+        
+    
+    <script>
+    $(document).on("click", ".ubah-deskripsi", function () {
+        var myBookId = $(this).data('id');
+        $(".modal-body #desc").val( myBookId );
+        // As pointed out in comments,
+        // it is unnecessary to have to manually call the modal.
+        // $('#addBookDialog').modal('show');
+    });
+	</script>
+    <script>
+		$(document).on("click", ".ubah-status", function () {
+			var myBookId = $(this).data('id');
+			$(".modal-body #id_book").val( myBookId );
+			// As pointed out in comments,
+			// it is unnecessary to have to manually call the modal.
+			// $('#addBookDialog').modal('show');
+		});
+	</script>
+    <script>
+		$(document).on("click", ".ubah-status", function () {
+			var myBookId = $(this).data('id');
+			$(".modal-body #id_book").val( myBookId );
+			// As pointed out in comments,
+			// it is unnecessary to have to manually call the modal.
+			// $('#addBookDialog').modal('show');
+		});
+	</script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
